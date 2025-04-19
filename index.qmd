@@ -1,0 +1,17 @@
+---
+title: "Building surveys with surveydown"
+---
+
+<hr>
+
+George Washington University
+
+<hr>
+
+# Part 1: [Getting started](getting-started.qmd)
+
+Description
+
+# Part 2: [Reactivity](reactivity.qmd)
+
+Description

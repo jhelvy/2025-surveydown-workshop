@@ -1,0 +1,57 @@
+---
+title: "Getting Started"
+---
+
+```{r, echo=FALSE}
+part <- "getting-started"
+path_slides <- file.path("parts", part, "index.html")
+path_pdf <- file.path("parts", part, paste0(part, ".pdf"))
+```
+
+:::{.column-body-outset}
+
+::: {.grid}
+
+::: {.g-col-6}
+
+**KEYBOARD SHORTCUTS FOR SLIDES:**
+
+- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides.
+- Use <kbd>f</kbd> to toggle full screen.
+- Use <kbd>o</kbd> to view an overview of all slides.
+- Use <kbd>h</kbd> to see a list of other shortcuts.
+:::
+
+::: {.g-col-3}
+
+::: {.class-buttons}
+
+**SLIDES**
+
+<a href=`r path_slides` class="btn-slides" target="_blank"><i class="fas fa-external-link-alt"></i> View slides</a>
+
+<a href=`r path_pdf` class="btn-slides"><i class="fas fa-file-pdf"></i> Download PDF</a>
+
+:::
+
+:::
+
+::: {.g-col-3}
+
+::: {.class-buttons}
+
+**CHEATSHEET**
+
+<a href="/content/cheatsheet-storytelling.pdf" class="btn-slides"><i class="fas fa-file-pdf"></i> Download PDF</a>
+
+:::
+
+:::
+
+:::
+
+::: slides-wrapper
+<iframe class="slides-iframe" src="`r path_slides`"></iframe>
+:::
+
+:::
