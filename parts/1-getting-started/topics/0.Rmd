@@ -1,0 +1,12 @@
+
+class: inverse, middle
+
+# Week `r rmarkdown::metadata$week`: .fancy[`r rmarkdown::metadata$title`]
+
+### 1. Course orientation
+
+### BREAK
+
+### 2. Getting started with R & RStudio
+### 3. Operators & data types
+### 4. Preview of HW 1

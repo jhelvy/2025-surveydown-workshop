@@ -12,6 +12,10 @@ George Washington University
 
 Description
 
-# Part 2: [Reactivity](reactivity.qmd)
+# Part 2: [Data Handling](data-handling.qmd)
+
+Description
+
+# Part 3: [Reactivity](reactivity.qmd)
 
 Description
