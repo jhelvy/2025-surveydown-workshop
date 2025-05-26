@@ -1,8 +1,0 @@
----
-title: "Getting Started"
-params:
-  class: "1-getting-started"
----
-
-```{r child = here::here("fragments", "part.qmd")}
-```

@@ -1,0 +1,7 @@
+
+class: inverse, middle
+
+# .fancy[`r rmarkdown::metadata$title`]
+
+### 1. .orange[Conditional display]
+### 2. Conditional skip forward

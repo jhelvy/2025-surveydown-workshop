@@ -1,0 +1,230 @@
+---
+title: "Conditional Control"
+date: May 29, 2025
+author: "John Paul Helveston"
+institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - css/lexis.css
+      - css/lexis-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, child="../setup.Rmd"}
+```
+
+class: center, middle, inverse
+
+.leftcol40[
+
+<center>
+<img src="https://surveydown.org/images/logo.png" width=100%>
+</center>
+
+]
+
+.rightcol60[
+
+<br><br>
+# .font150[.fancy[`r rmarkdown::metadata$title`]]
+ 
+]
+
+---
+
+```{r child="topics/0.Rmd"}
+```
+
+---
+
+```{r child="topics/1.Rmd"}
+```
+
+---
+
+class: center
+
+## [Conditional question display](https://surveydown.org/docs/conditional-logic#conditional-question-display)
+
+<center>
+<img src="images/show_if.gif" width=68%>
+</center>
+
+---
+
+## Conditional question display
+
+Define both _conditional_ and _target_ questions in `survey.qmd`
+
+.leftcol70[.code70[
+
+```{r}
+#| eval: false
+
+# Conditional question
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "Which is your favorite type of penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo",
+    "Other"     = "other"
+  )
+)
+
+# Target question
+sd_question(
+  type  = "text",
+  id    = "penguins_other", 
+  label = "Please specify the other penguin type:"
+)
+```
+
+]]
+
+---
+
+## Conditional question display
+
+Define condition with `sd_show_if` in `app.R`
+
+```{r}
+#| eval: false
+
+server <- function(input, output, session) {
+
+  sd_show_if( #<<
+    input$penguins == "other" ~ "penguins_other" #<<
+  ) #<<
+
+  # ...other server code...
+
+}
+```
+
+--
+
+1) The structure of the condition is always:
+
+```{r}
+#| eval: false
+
+<condition> ~ "target_question_id"
+```
+
+--
+
+2) Note the use of `input$penguins`
+
+---
+
+```{r child="topics/2.Rmd"}
+```
+
+---
+
+class: center
+
+## Conditional [skip forward](https://surveydown.org/docs/conditional-logic#conditional-forward-page-skipping) 
+
+<br>
+
+Example: participant screen out
+
+<center>
+<img src="images/screenout.png" width=60%>
+</center>
+
+---
+
+.leftcol[
+
+In `survey.qmd`:
+
+Target screenout question 
+
+```{r}
+#| eval: false
+
+sd_question(
+  type  = 'mc',
+  id    = 'vehicle_ownership',
+  label = "Do you own a vehicle?",
+  option = c(
+    'Yes' = 'yes',
+    'No'  = 'no'
+  )
+)
+```
+
+Target screenout page
+
+````{markdown}
+::: {.sd_page id=screenout}
+
+Sorry, but you are not qualified to take our survey.
+
+:::
+````
+
+]
+
+---
+
+.leftcol60[
+
+In `app.R`:
+
+Skip forward condition in 
+
+```{r}
+#| eval: false
+
+server <- function(input, output, session) {
+
+  sd_skip_forward( #<<
+    input$vehicle_ownership == "no" ~ "screenout" #<<
+  ) #<<
+
+  # ...other server code...
+
+}
+```
+
+]
+
+---
+
+class: center, middle
+
+## For both conditional display and conditional skip forward,<br>there are lots of [conditions to choose from](https://surveydown.org/docs/conditional-logic#common-conditions)
+
+---
+
+class: inverse
+
+```{r, echo=FALSE}
+countdown(
+  minutes   = 15,
+  top       = 0,
+  right     = 0,
+  font_size = '2em'
+)
+```
+
+## Your turn
+
+- Open the survey you were editing from your last practice.
+- Add conditional logic content:
+    - Add one simple multiple choice question about your survey topic and another that will only display depending on a specific choice in the first question.
+    - Add a target page that respondents should be sent to based on their choices in another question in an earlier page (e.g., a multiple choice question).

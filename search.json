@@ -1,17 +1,24 @@
 [
   {
-    "objectID": "reactivity.html",
-    "href": "reactivity.html",
+    "objectID": "parts/reactivity.html",
+    "href": "parts/reactivity.html",
     "title": "Reactivity",
     "section": "",
-    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCHEATSHEET\n Download PDF"
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\n View slides\n\n\n\n\n\n\n Download PDF"
   },
   {
-    "objectID": "getting-started.html",
-    "href": "getting-started.html",
-    "title": "Getting Started",
+    "objectID": "parts/data-handling.html",
+    "href": "parts/data-handling.html",
+    "title": "Data Handling",
     "section": "",
-    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nCHEATSHEET\n Download PDF"
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\n View slides\n\n\n\n\n\n\n Download PDF"
+  },
+  {
+    "objectID": "install.html",
+    "href": "install.html",
+    "title": "",
+    "section": "",
+    "text": "1. Install R & Quarto\nYou need both:\n\nInstall \nInstall Quarto\n\nWe also recommend working with an IDE that has good support for R, Quarto, and Shiny.\nRStudio is great, and we also like VSCode and Positron.\n\n\n2. Install the surveydown R package\nYou can install surveydown from CRAN in your R console:\n\ninstall.packages(\"surveydown\")\n\nor you can install the development version from GitHub:\n\n# install.packages(\"pak\")\npak::pak(\"surveydown-dev/surveydown\")\n\nLoad the package with:\n\nlibrary(surveydown)\n\nYou can also check which version you have installed:\n\nsurveydown::sd_version()\n\n\n\n3. Install the sdApps R package\nYou can install the development version (not on CRAN yet) of sdApps from GitHub:\n\n# install.packages(\"pak\")\npak::pak('surveydown-dev/sdApps)"
   },
   {
     "objectID": "LICENSE.html",
@@ -21,17 +28,24 @@
     "text": "The course material is licensed under the Creative Commons ShareAlike 4.0 International License."
   },
   {
-    "objectID": "data-handling.html",
-    "href": "data-handling.html",
-    "title": "Data Handling",
-    "section": "",
-    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nPRACTICE\n Download PDF"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Building surveys with surveydown",
+    "title": "",
     "section": "",
-    "text": "George Washington University\n\n\nPart 1: Getting started\nDescription\n\n\nPart 2: Data Handling\nDescription\n\n\nPart 3: Reactivity\nDescription"
+    "text": "A workshop on building surveys with the surveydown platform\n\n\n\n\n\n\nPART 1: Getting Started\n\nLearn the basic structure of a surveydown survey and create your first survey\n\n\n\n\n\n\n\n\nPART 2: Conditional Control\n\nTake control over page navigation and content display based on question responses\n\n\n\n\n\n\n\n\nPART 3: Data Handling\n\nSetup up your database to store response data and dynamically use the data in your survey\n\n\n\n\n\n\n\n\nPART 4: Reactivity\n\nLeverage shiny’s powerful reactivity framework to make your surveys more dynamic"
+  },
+  {
+    "objectID": "parts/conditional-control.html",
+    "href": "parts/conditional-control.html",
+    "title": "Conditional Control",
+    "section": "",
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\n View slides\n\n\n\n\n\n\n Download PDF"
+  },
+  {
+    "objectID": "parts/getting-started.html",
+    "href": "parts/getting-started.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\n View slides\n\n\n\n\n\n\n Download PDF"
   }
 ]

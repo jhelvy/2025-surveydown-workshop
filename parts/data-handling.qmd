@@ -1,0 +1,8 @@
+---
+title: "Data Handling"
+params:
+  part: "data-handling"
+---
+
+```{r child = here::here("fragments", "part.qmd")}
+```

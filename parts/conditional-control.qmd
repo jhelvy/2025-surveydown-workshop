@@ -1,0 +1,8 @@
+---
+title: "Conditional Control"
+params:
+  part: "conditional-control"
+---
+
+```{r child = here::here("fragments", "part.qmd")}
+```

@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jhelvy.github.io/2025-surveydown-workshop/reactivity.html</loc>
-    <lastmod>2025-05-26T18:06:12.783Z</lastmod>
+    <loc>https://jhelvy.github.io/2025-surveydown-workshop/parts/reactivity.html</loc>
+    <lastmod>2025-05-26T20:03:22.649Z</lastmod>
   </url>
   <url>
-    <loc>https://jhelvy.github.io/2025-surveydown-workshop/getting-started.html</loc>
-    <lastmod>2025-05-26T18:06:12.719Z</lastmod>
+    <loc>https://jhelvy.github.io/2025-surveydown-workshop/parts/data-handling.html</loc>
+    <lastmod>2025-05-26T20:03:22.637Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jhelvy.github.io/2025-surveydown-workshop/install.html</loc>
+    <lastmod>2025-05-26T20:03:22.633Z</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/2025-surveydown-workshop/LICENSE.html</loc>
-    <lastmod>2025-05-26T18:06:12.719Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jhelvy.github.io/2025-surveydown-workshop/data-handling.html</loc>
-    <lastmod>2025-05-26T18:06:12.719Z</lastmod>
+    <lastmod>2025-05-26T20:03:22.623Z</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/2025-surveydown-workshop/index.html</loc>
-    <lastmod>2025-05-26T18:06:12.719Z</lastmod>
+    <lastmod>2025-05-26T20:03:22.633Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jhelvy.github.io/2025-surveydown-workshop/parts/conditional-control.html</loc>
+    <lastmod>2025-05-26T20:03:22.634Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jhelvy.github.io/2025-surveydown-workshop/parts/getting-started.html</loc>
+    <lastmod>2025-05-26T20:03:22.637Z</lastmod>
   </url>
 </urlset>
