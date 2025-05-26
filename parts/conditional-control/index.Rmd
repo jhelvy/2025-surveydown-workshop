@@ -1,0 +1,49 @@
+---
+title: "Conditional Control"
+date: May 29, 2025
+author: "John Paul Helveston"
+institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
+output:
+  xaringan::moon_reader:
+    css:
+      - default
+      - css/lexis.css
+      - css/lexis-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, child="../setup.Rmd"}
+```
+
+```{r}
+#| include: false
+
+source('functions.R')
+```
+
+class: center, middle, inverse
+
+.leftcol40[
+
+<center>
+<img src="https://surveydown.org/images/logo.png" width=100%>
+</center>
+
+]
+
+.rightcol60[
+
+<br><br>
+# .font150[.fancy[`r rmarkdown::metadata$title`]]
+ 
+]
+
+---
+
+Content

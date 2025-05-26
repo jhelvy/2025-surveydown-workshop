@@ -40,6 +40,9 @@ jobs:
           packages:
             any::knitr
             any::rmarkdown
+            any::countdown
+            any::metathis
+            any::surveydown
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

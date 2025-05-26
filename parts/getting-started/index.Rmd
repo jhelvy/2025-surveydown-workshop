@@ -21,12 +21,6 @@ output:
 ```{r setup, child="../setup.Rmd"}
 ```
 
-```{r}
-#| include: false
-
-source('functions.R')
-```
-
 class: center, middle, inverse
 
 .leftcol40[
@@ -50,7 +44,7 @@ class: center, middle, inverse
 
 .leftcol30[.circle[
 
-<img src="/images/authors/john_helveston_square.png" width=100%>
+<img src="images/john_helveston_square.png" width=100%>
 
 ]]
 
@@ -79,7 +73,7 @@ class: center
 .cols3[.circle[
 
 <center>
-<img src="/images/authors/john_helveston_square.png" width=90%>
+<img src="images/john_helveston_square.png" width=90%>
 <br>
 <b>John Paul Helveston</b>
 </center>
@@ -89,7 +83,7 @@ class: center
 .cols3[.circle[
 
 <center>
-<img src="/images/authors/pingfan_hu.jpg" width=90%>
+<img src="images/pingfan_hu.jpg" width=90%>
 <br>
 <b>Pingfan Hu</b>
 </center>
@@ -99,7 +93,7 @@ class: center
 .cols3[.circle[
 
 <center>
-<img src="/images/authors/bogdan_bunea.jpg" width=90%>
+<img src="images/bogdan_bunea.jpg" width=90%>
 <br>
 <b>Bogdan Bunea</b>
 </center>
