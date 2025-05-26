@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Getting started with surveydown</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="John Paul Helveston" />
+    <meta name="date" content="2025-05-29" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <meta name="generator" content="xaringan and remark.js"/>
+    <meta name="github-repo" content="jhelvy/2025-surveydown-workshop"/>
+    <meta name="twitter:title" content="Getting started with surveydown"/>
+    <meta name="twitter:url" content="https://jhelvy.github.io/2025-surveydown-workshop/"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:title" content="Getting started with surveydown"/>
+    <meta property="og:url" content="https://jhelvy.github.io/2025-surveydown-workshop/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="John Paul Helveston"/>
+    <link href="libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="libs/countdown/countdown.js"></script>
+    <link rel="stylesheet" href="css/lexis.css" type="text/css" />
+    <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+class: center, middle, inverse
+
+.leftcol40[
+
+&lt;center&gt;
+&lt;img src="https://surveydown.org/images/logo.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol60[
+
+&lt;br&gt;&lt;br&gt;
+# .font150[.fancy[Getting started with surveydown]]
+ 
+]
+
+---
+
+# Meet your instructor!
+
+.leftcol30[.circle[
+
+&lt;img src="/images/authors/john_helveston_square.png" width=100%&gt;
+
+]]
+
+.rightcol70[
+
+### John Helveston, Ph.D.
+
+.font80[
+
+Associate Professor, Engineering Management &amp; Systems Engineering
+
+- 2016-2018 Postdoc at [Institute for Sustainable Energy](https://www.bu.edu/ise/), Boston University
+- 2016 PhD in Engineering &amp; Public Policy at Carnegie Mellon University
+- 2015 MS in Engineering &amp; Public Policy at Carnegie Mellon University
+- 2010 BS in Engineering Science &amp; Mechanics at Virginia Tech
+- Website: [www.jhelvy.com](http://www.jhelvy.com/)
+
+]]
+
+---
+
+class: center
+
+# Meet the dev team!
+
+.cols3[.circle[
+
+&lt;center&gt;
+&lt;img src="/images/authors/john_helveston_square.png" width=90%&gt;
+&lt;br&gt;
+&lt;b&gt;John Paul Helveston&lt;/b&gt;
+&lt;/center&gt;
+
+]]
+
+.cols3[.circle[
+
+&lt;center&gt;
+&lt;img src="/images/authors/pingfan_hu.jpg" width=90%&gt;
+&lt;br&gt;
+&lt;b&gt;Pingfan Hu&lt;/b&gt;
+&lt;/center&gt;
+
+]]
+
+.cols3[.circle[
+
+&lt;center&gt;
+&lt;img src="/images/authors/bogdan_bunea.jpg" width=90%&gt;
+&lt;br&gt;
+&lt;b&gt;Bogdan Bunea&lt;/b&gt;
+&lt;/center&gt;
+
+]]
+
+---
+
+
+
+class: inverse, middle
+
+# .fancy[Getting started with surveydown]
+
+### 1. What is surveydown?
+### 2. surveydown basics
+### 3. Building your first surveydown survey!
+### 4. Adding survey content
+
+---
+
+
+
+class: inverse, middle
+
+# .fancy[Getting started with surveydown]
+
+### 1. .orange[What is surveydown?]
+### 2. surveydown basics
+### 3. Building your first surveydown survey!
+### 4. Adding survey content
+
+---
+
+background-color: #fff
+class: center
+
+# Typical experience making a survey
+
+&lt;center&gt;
+&lt;img src="images/google-form.gif" width=600&gt;
+&lt;/center&gt;
+
+---
+
+background-color: #fff
+class: middle
+
+.leftcol60[
+
+&lt;center&gt;
+&lt;img src="images/google-form.gif" width=600&gt;
+&lt;/center&gt;
+
+]
+
+.rightcol40[
+
+### ❌ Reproducible
+### ❌ Data Control
+### ⚠️ Free to Use
+### ⚠️ Open Source
+### ⚠️ Easy Collaboration
+### ⚠️ Feature Packed
+
+]
+
+---
+
+class: center
+
+## Introducing `surveydown`
+
+&lt;center&gt;
+&lt;img src="images/technologies.svg" width=90%&gt;
+&lt;/center&gt;
+
+---
+
+
+
+class: inverse, middle
+
+# .fancy[Getting started with surveydown]
+
+### 1. What is surveydown?
+### 2. .orange[surveydown basics]
+### 3. Building your first surveydown survey!
+### 4. Adding survey content
+
+---
+
+class: center
+
+# Components
+
+&lt;br&gt;
+
+.leftcol45[
+
+### `survey.qmd` 
+
+A **Quarto doc** defining the main survey content (pages, text, images, questions, etc).
+
+
+]
+
+.rightcol45[
+
+### `app.R` 
+
+An **R script** defining the survey Shiny app. It sets up the database and server, and launches the survey.
+
+]
+
+---
+
+.leftcol[.code50[
+
+
+```` markdown
+---
+format: html
+echo: false
+warning: false
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {.sd_page id=welcome}
+
+# Welcome to our survey!
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "What's your favorite penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo"
+  )
+)
+
+sd_next()
+```
+
+:::
+
+::: {.sd_page id=end}
+
+This is the last page of the survey.
+
+```{r}
+sd_close()
+```
+
+:::
+
+````
+
+]]
+
+.rightcol[
+
+# .center[survey.qmd]
+
+]
+
+---
+
+.leftcol[.code50[
+
+
+```` markdown
+*---
+*format: html
+*echo: false
+*warning: false
+*---
+ 
+*```{r}
+*library(surveydown)
+*```
+
+::: {.sd_page id=welcome}
+
+# Welcome to our survey!
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "What's your favorite penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo"
+  )
+)
+
+sd_next()
+```
+
+:::
+
+::: {.sd_page id=end}
+
+This is the last page of the survey.
+
+```{r}
+sd_close()
+```
+
+:::
+
+````
+
+]]
+
+.rightcol[
+
+YAML Header 
+
+&lt;br&gt;
+Load `surveydown` package
+
+]
+
+---
+
+.leftcol[.code50[
+
+
+```` markdown
+---
+format: html
+echo: false
+warning: false
+---
+
+```{r}
+library(surveydown)
+```
+
+*::: {.sd_page id=welcome}
+
+# Welcome to our survey!
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "What's your favorite penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo"
+  )
+)
+
+sd_next()
+```
+
+*:::
+
+*::: {.sd_page id=end}
+
+This is the last page of the survey.
+
+```{r}
+sd_close()
+```
+
+*:::
+
+````
+
+]]
+
+.rightcol[
+
+Define pages using "fences"
+
+
+``` markdown
+::: {.sd_page id=page_id}
+
+Page content
+
+:::
+```
+
+]
+
+---
+
+.leftcol[.code50[
+
+
+```` markdown
+---
+format: html
+echo: false
+warning: false
+---
+
+```{r}
+library(surveydown)
+```
+
+::: {.sd_page id=welcome}
+
+*# Welcome to our survey!
+
+*```{r}
+*sd_question(
+* type  = "mc",
+* id    = "penguins",
+* label = "What's your favorite penguin?",
+* option = c(
+*   "Adélie"    = "adelie",
+*   "Chinstrap" = "chinstrap",
+*   "Gentoo"    = "gentoo"
+* )
+*) 
+
+*sd_next()
+*```
+
+:::
+
+::: {.sd_page id=end}
+
+This is the last page of the survey.
+
+```{r}
+sd_close()
+```
+
+:::
+
+````
+
+]]
+
+.rightcol[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Use markdown for page content
+
+Use `sd_question()` in code chunk for survey questions
+
+&lt;br&gt;&lt;br&gt;Use `sd_next()` for next button
+
+]
+
+---
+
+.leftcol[.code70[
+
+
+``` r
+library(surveydown)
+
+# Connects to database
+db &lt;- sd_db_connect()
+
+# Main UI
+ui &lt;- sd_ui()
+
+server &lt;- function(input, output, session) {
+  # Main server
+  sd_server(db)
+}
+
+shiny::shinyApp(
+  ui = ui, 
+  server = server
+)
+```
+
+]]
+
+.rightcol[
+
+# .center[app.R]
+
+]
+
+---
+
+.leftcol[.code70[
+
+
+``` r
+*library(surveydown)
+
+# Connects to database
+*db &lt;- sd_db_connect()
+
+# Main UI
+*ui &lt;- sd_ui()
+
+server &lt;- function(input, output, session) {
+  
+  # Main server
+* sd_server(db)
+
+}
+
+shiny::shinyApp(
+  ui = ui,
+  server = server
+)
+```
+
+]]
+
+.rightcol[
+
+Load package
+
+Connect to database
+
+Make standard UI 
+
+&lt;br&gt;Run surveydown server
+
+]
+
+---
+
+
+
+class: inverse, middle
+
+# .fancy[Getting started with surveydown]
+
+### 1. What is surveydown?
+### 2. surveydown basics
+### 3. .orange[Building your first surveydown survey!]
+### 4. Adding survey content
+
+---
+
+class: inverse
+
+<div class="countdown" id="timer_1ddaeb9a" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+# Your turn - start with a [template](https://surveydown.org/templates)
+
+**Step 1:** In R console, run:
+
+
+``` r
+surveydown::sd_create_survey()
+```
+
+*Optional*: Specify a `path` and / or a `template`:
+
+
+``` r
+surveydown::sd_create_survey(
+  path     = "path/to/folder",
+  template = "question_types"
+)
+```
+
+**Step 2:** In your IDE, open the `app.R` file, click "Run App", or in R console run:
+
+
+``` r
+shiny::runApp('app.R')
+```
+
+---
+
+
+
+class: inverse, middle
+
+# .fancy[Getting started with surveydown]
+
+### 1. What is surveydown?
+### 2. surveydown basics
+### 3. Building your first surveydown survey!
+### 4. .orange[Adding survey content]
+
+---
+
+## YAML Header
+
+The YAML header is at the top of the `.qmd` file:
+
+``` yaml
+---
+format: html
+echo: false
+warning: false
+---
+```
+
+---
+
+## Change the survey theme 
+
+Pick a different [bootswatch theme](https://bootswatch.com) with the `theme` key:
+
+
+``` markdown
+---
+format: html
+echo: false
+warning: false
+*theme: united
+---
+```
+
+Make a custom theme with a `custom.scss` file
+
+
+``` markdown
+---
+format: html
+echo: false
+warning: false
+*theme: [united, custom.scss]
+---
+```
+
+---
+
+## Progress bar
+
+You can modify the survey progress bar with the `barcolor` and `barposition` keys:
+
+.leftcol[
+
+Change to any color with `barcolor`:
+
+
+``` markdown
+---
+format: html
+echo: false
+warning: false
+*barcolor: #768692
+---
+```
+
+]
+
+.rightcol[
+
+Change position: `top`, `bottom`, or `none`
+
+
+``` markdown
+---
+format: html
+echo: false
+warning: false
+*barposition: bottom
+---
+```
+
+]
+
+---
+
+# Inserting pages
+
+Insert new pages with `:::` symbols, like this
+
+
+``` r
+::: {.sd_page id=page_id}
+
+Page content here
+
+:::
+```
+
+--
+
+Insert next buttons with the `sd_next()` function, like this (blank goes to next page):
+
+````markdown
+```{r}
+sd_next('next_page_id')
+```
+````
+
+---
+
+# Inserting questions
+
+Insert questions using the `sd_question()` function, like this:
+
+.leftcol[
+
+**Code**
+
+
+``` r
+sd_question(
+  type   = 'mc',
+  id     = 'fruit',
+  label  = "1. Do you like fruit?",
+  option = c(
+    'Yes!'    = 'yes',
+    'Kind of' = 'kind_of',
+    'No :('   = 'no'
+  )
+)
+```
+
+Format is `"Label = value"`
+
+]
+
+.rightcol[
+
+**Output**
+
+<div id="container-fruit" data-question-id="fruit" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue(&#39;fruit_interacted&#39;, true, {priority: &#39;event&#39;});" onclick="Shiny.setInputValue(&#39;fruit_interacted&#39;, true, {priority: &#39;event&#39;});">
+<div id="fruit" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="fruit-label">
+<label class="control-label" id="fruit-label" for="fruit"><ol>
+<li>Do you like fruit?</li>
+</ol>
+</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="fruit" value="yes"/>
+<span>Yes!</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="fruit" value="kind_of"/>
+<span>Kind of</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="fruit" value="no"/>
+<span>No :(</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+
+]
+
+---
+
+## surveydown supports lots of [question types](https://surveydown.org/docs/question-types)
+
+Some common types you may want to use:
+
+Type | Description
+-----|---------------------
+`mc` | Multiple choice question (single choice) 
+`mc_multiple` | Multiple choice question (multiple choices) 
+`mc_buttons` | Multiple choice question (large buttons)
+`select` | Drop down menu (choose one)
+`text` | Open text, single row
+`textarea` | Open text, block
+
+---
+
+# Embedding images
+
+I recommend just writing html code, like this
+
+
+``` html
+&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
+```
+
+&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
+
+---
+
+# Centered image
+
+I recommend just writing html code, like this
+
+
+``` html
+&lt;center&gt;
+&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
+&lt;/center&gt;
+```
+
+&lt;center&gt;
+&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
+&lt;/center&gt;
+
+---
+
+class: center, middle
+
+# Try out the surveydown [studio app](https://github.com/surveydown-dev/sdApps)
+
+## `sdApps::sd_studio()`
+
+---
+
+class: inverse
+
+<div class="countdown" id="timer_79153501" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+## Your turn
+
+- Open and edit the `survey.qmd` file that you previously made.
+- Pick a topic for your survey (a food, an animal, a sports team...whatever).
+- Draft a survey about that topic. Include the following:
+    - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
+    - Pages 2 to N: Add different questions about the topic using several different question types.
+- Try out different themes to change the look and feel. 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

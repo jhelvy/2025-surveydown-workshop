@@ -1,9 +1,6 @@
 ---
-title: "Getting Started"
-subtitle: "EMSE 4571 / 6571: Intro to Programming for Analytics"
-date: January 16, 2025
-week: 1
-class: "1-getting-started"
+title: "Getting started with surveydown"
+date: May 29, 2025
 author: "John Paul Helveston"
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
@@ -21,22 +18,93 @@ output:
       ratio: "16:9"
 ---
 
-```{r, child="../setup.Rmd"}
+```{r setup, child="../setup.Rmd"}
 ```
+
+```{r}
+#| include: false
+
+source('functions.R')
+```
+
+class: center, middle, inverse
+
+.leftcol40[
+
+<center>
+<img src="https://surveydown.org/images/logo.png" width=100%>
+</center>
+
+]
+
+.rightcol60[
+
+<br><br>
+# .font150[.fancy[`r rmarkdown::metadata$title`]]
+ 
+]
 
 ---
 
-class: center, inverse, middle
+# Meet your instructor!
 
-# Two rules:
+.leftcol30[.circle[
 
---
+<img src="/images/authors/john_helveston_square.png" width=100%>
 
-## 1) Be Present
+]]
 
---
+.rightcol70[
 
-## 2) Celebrate Mistakes
+### John Helveston, Ph.D.
+
+.font80[
+
+Associate Professor, Engineering Management & Systems Engineering
+
+- 2016-2018 Postdoc at [Institute for Sustainable Energy](https://www.bu.edu/ise/), Boston University
+- 2016 PhD in Engineering & Public Policy at Carnegie Mellon University
+- 2015 MS in Engineering & Public Policy at Carnegie Mellon University
+- 2010 BS in Engineering Science & Mechanics at Virginia Tech
+- Website: [www.jhelvy.com](http://www.jhelvy.com/)
+
+]]
+
+---
+
+class: center
+
+# Meet the dev team!
+
+.cols3[.circle[
+
+<center>
+<img src="/images/authors/john_helveston_square.png" width=90%>
+<br>
+<b>John Paul Helveston</b>
+</center>
+
+]]
+
+.cols3[.circle[
+
+<center>
+<img src="/images/authors/pingfan_hu.jpg" width=90%>
+<br>
+<b>Pingfan Hu</b>
+</center>
+
+]]
+
+.cols3[.circle[
+
+<center>
+<img src="/images/authors/bogdan_bunea.jpg" width=90%>
+<br>
+<b>Bogdan Bunea</b>
+</center>
+
+]]
 
 ---
 
@@ -50,226 +118,36 @@ class: center, inverse, middle
 
 ---
 
-# Meet your instructor!
+background-color: #fff
+class: center
 
-.leftcol30[.circle[
+# Typical experience making a survey
 
-<img src="https://www.jhelvy.com/images/lab/john_helveston_circle.png" width="300">
-
-]]
-
-.rightcol70[
-
-### John Helveston, Ph.D.
-
-.font80[
-
-Assistant Professor, Engineering Management & Systems Engineering
-
-- 2016-2018 Postdoc at [Institute for Sustainable Energy](https://www.bu.edu/ise/), Boston University
-- 2016 PhD in Engineering & Public Policy at Carnegie Mellon University
-- 2015 MS in Engineering & Public Policy at Carnegie Mellon University
-- 2010 BS in Engineering Science & Mechanics at Virginia Tech
-- Website: [www.jhelvy.com](http://www.jhelvy.com/)
-
-]]
+<center>
+<img src="images/google-form.gif" width=600>
+</center>
 
 ---
 
-# Meet your tutors!
+background-color: #fff
+class: middle
 
-.leftcol30[.circle[
+.leftcol60[
 
-<img src="images/pingfan_hu.jpg" width="300">
-
-]]
-
-.rightcol70[
-
-### **Pingfan Hu**
-
-- Graduate Teaching Assistant (GTA)
-- 2nd Year PhD student in EMSE
+<center>
+<img src="images/google-form.gif" width=600>
+</center>
 
 ]
 
----
-
-# Meet your tutors!
-
-.leftcol30[.circle[
-
-<img src="images/lola_nurullaeva.jpg" width="300">
-
-]]
-
-.rightcol70[
-
-### **Lola Nurullaeva**
-
-- Learning Assistant (LA)
-- EMSE Senior & P4A / EDA alumni
-
-]
-
----
-
-# Course orientation
-
---
-
-## `r fa('globe')` Everything you need will be on the course website:
-
-### https://p4a.seas.gwu.edu/2025-Spring/
-
----
-
-## `r fa('puzzle-piece')` Course is broken into **two chunks**:
-
-### 1. Programming (before Spring Break)
-### 2. Analytics (after Spring Break)
-
---
-
-<br>
-
-### In the fall, you'll take EMSE 4572 / 6572: Exploratory Data Analysis
-
-### [Fall 2024 Project Showcase](https://eda.seas.gwu.edu/showcase.html#fall-2024)
-
----
-
-# Learning Objectives
-
-<br>
-
-## After this class, you will know how to...
-
-### ...write `r fa('r-project')` code to solve medium-sized tasks.
-### ...pro-actively test and debug code.
-### ...import, export, manipulate, and visualize data.
-
----
-
-# Attendance / Participation (7%)
-
-<br>
-
-### **Attendance will be taken** and will be part of your participation grade
-
----
-
-# Homeworks (45% of grade)
-
-<br>
-
---
-
-## `r fa('calendar')` Every week (13 total, lowest dropped)
-
---
-
-## `r fa('clock')` Due 11:59pm Tues. before class
-
----
-
-# Late submissions
-
-<br>
-
-### - **3** late days - use them anytime, no questions asked
-### - After that, 50% off for up to 24 hours after deadline, 0% afterwards
-### - Contact me for special cases
-
----
-
-# Quizzes (18% of grade)
-
-<br>
-
---
-
-## `r fa('calendar')` In class (almost) every other week (10 total, drop lowest 2)
-
---
-
-## `r fa('clock')` ~10 minutes (1-3 questions)
-
---
-
-> **Why quiz at all?** There's a phenomenon called the "retrieval effect" - basically, you have to _practice_ remembering things, otherwise your brain won't remember them (details in the book ["Make It Stick: The Science of Successful Learning"](https://www.hup.harvard.edu/catalog.php?isbn=9780674729018)).
-
----
-
-# Exams (30% of grade)
-
-<br>
-
-## `r fa('calendar')` Midterm (weeks 1 - 7) on March 06
-
-## `r fa('calendar')` Final (weeks 1 - 14) on May 08
-
----
-
-# .center[Grades]
-
-<br>
-
-Component                  | Weight | Notes
----------------------------|--------|----------------
-Participation / Attendance | 7%     |
-Homeworks & Readings (13x) | 45%    | Lowest 1 dropped
-Quizzes (7x)               | 18%    | Lowest 2 dropped
-Midterm Exam               | 10%    |
-Final Exam                 | 20%    |
-
----
-
-# .center[Alternative Minimum Grade (AMG)]
-
-- Designed for those who struggle early but work hard to succeed in 2nd half.
-- Highest possible grade is "C"
-
-<br>
-
-Course Component   | Weight
--------------------|----
-Best 10 Homeworks  | 40%
-Best 4 Quizzes     | 10%
-Midterm Exam       | 10%
-Final Exam         | 40%
-
----
-
-# Typing Bonus Challenge
-
-- Earn a **1% bonus to your final grade** by beating Professor Helveston in a speed typing challenge
-- Challenge held on https://monkeytype.com/
-
-<br>
-
-(Yes, I'm serious...see rules [here](https://p4a.seas.gwu.edu/2025-Spring/syllabus.html#typing-bonus-challenge))
-
----
-
-# Course policies
-
---
-
-.leftcol35[
-
-- ## BE ON TIME
-- ## BE NICE
-- ## BE HONEST
-- ## DON'T CHEAT
-
-]
-
---
-
-.rightcol65[
-
-## **Don't copy-paste others' code!**
+.rightcol40[
+
+### ❌ Reproducible
+### ❌ Data Control
+### ⚠️ Free to Use
+### ⚠️ Open Source
+### ⚠️ Easy Collaboration
+### ⚠️ Feature Packed
 
 ]
 
@@ -277,103 +155,11 @@ Final Exam         | 40%
 
 class: center
 
-# [AI Policy](https://p4a.seas.gwu.edu/2025-Spring/syllabus.html#use-of-chatgpt-and-other-ai-tools)
+## Introducing `surveydown`
 
-### ([Demo](https://chat.openai.com/))
-
-<br>
-
-.leftcol[
-
-## Assignments 1-7:<br>**Not permitted**
-
-]
-
-.rightcol[
-
-## Assignments 8-13:<br>**Permitted, with caveats**
-
-]
-
----
-
-# How to succeed in this class
-
---
-
-## `r fa("users")` Participate during class!
-
---
-
-## `r fa("pen-ruler")` Start assignments early and **read carefully**!
-
---
-
-## `r fa("bed")` Get sleep and take breaks often!
-
---
-
-## `r fa("people-carry-box")` Ask for help!
-
----
-
-# Getting Help
-
---
-
-## `r fa('slack')` Use [Slack](https://emse-p4a-s25.slack.com/) to ask questions.
-
---
-
-## `r fa('person-chalkboard')` Meet with your tutors
-
---
-
-## `r fa('user-clock')` [Schedule a call](https://jhelvy.appointlet.com/b/professor-helveston) w/Prof. Helveston
-
---
-
-## `r fa('code')` [GW Coders](http://gwcoders.github.io/)
-
----
-
-# `r fa('hard-drive')` [Course Software](https://p4a.seas.gwu.edu/2025-Spring/software.html)
-
-<br>
-
---
-
-## `r fa('slack')` [Slack](https://emse-p4a-s25.slack.com/): Install app & **turn notifications on**!
-
---
-
-## `r fa('r-project')` [R](https://cloud.r-project.org/) & [RStudio](https://posit.co/download/rstudio-desktop/): Install both.
-
---
-
-## `r fa('r-project')` [RStudio Cloud](https://posit.cloud/plans/free): A (free) web-based version of RStudio.
-
----
-
-class: inverse, center
-
-# .fancy[Intermission]
-
-## `r fa('hard-drive')` Install [course software](https://p4a.seas.gwu.edu/2025-Spring/software.html) if you haven't
-
-```{r, echo=FALSE}
-countdown(
-  minutes      = 5,
-  warn_when    = 30,
-  update_every = 1,
-  left         = 0,
-  right        = 0,
-  top          = 1,
-  bottom       = 0,
-  margin       = "5%",
-  font_size    = "8em"
-)
-```
+<center>
+<img src="images/technologies.svg" width=90%>
+</center>
 
 ---
 
@@ -384,521 +170,341 @@ countdown(
 
 class: center
 
-## What is `r fa('r-project')`? ([Read a brief history here](https://bookdown.org/rdpeng/rprogdatascience/history-and-overview-of-r.html))
-
-Chambers creates "S" (1976, Bell Labs)<br>
-Ross & Robert create "R" (1991, U. of Auckland)
-
-.cols3[
-
-## .center[[John Chambers](https://en.wikipedia.org/wiki/John_Chambers_(statistician)]
-
-<center>
-<img src="https://datascience.stanford.edu/sites/g/files/sbiybj25376/files/styles/medium_square/public/media/image/john-chambers_0.png?h=78b7a964&itok=8v_bN9yZ" width=280>
-</center>
-
-]
-
-.cols3[
-
-## .center[[Ross Ihaka](https://en.wikipedia.org/wiki/Ross_Ihaka)]
-
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Ross_Ihaka_%285189180796%29.jpg/1280px-Ross_Ihaka_%285189180796%29.jpg" width=100%>
-</center>
-
-]
-
-.cols3[
-
-## .center[[Robert Gentleman](https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)]
-
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Robert_Gentleman_on_R_Consortium.jpg" width=250>
-</center>
-
-]
-
----
-
-# Wait, why aren't we using Python?
- 
-.leftcol[
-
-- [Python](https://en.wikipedia.org/wiki/Python_(programming_language) is a general purpose language developed by [**Guido van Rossum**](https://en.wikipedia.org/wiki/Guido_van_Rossum), a computer scientist.
-- Unlike R, Python was not originally developed for data analysis.
-- Both languages are extremely useful, and **you should probably learn python too**. 
-
-### The vast majority of concepts we'll learn apply to python
-
-]
-
-.rightcol[
-
-<center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Guido-portrait-2014-drc.jpg/1280px-Guido-portrait-2014-drc.jpg" width=100%>
-</center>
-
-]
-
----
-
-class: center, middle
-
-## What is RStudio?
-
-.leftcol[
-
-## `r fa('r-project')`
-
-<center>
-<img src="images/engine.jpg" width=500>
-</center>
-
-]
-
-.rightcol[
-
-## `r fa('r-project')`Studio
-
-<center>
-<img src="images/dashboard.jpg" width=600>
-</center>
-
-]
-
----
-
-class: center
-
-# RStudio Orientation
-
-.leftcol[
-
-## Open this
-
-<center>
-<img src="images/rstudio_ball.png" width=300>
-</center>
-
-]
-
-.rightcol[
-
-## Not this
-
-<center>
-<img src="images/Rlogo.png" width=400>
-</center>
-
-]
-
----
-
-# RStudio Orientation
-
-.leftcol70[
-
-<center>
-<img src="images/rstudio_panes.png" width=650>
-</center>
-
-]
-
-.rightcol30[
-
-- Know the boxes
-- Customize the layout
-- Customize the look
-- [Extra themes](https://www.garrickadenbuie.com/project/rsthemes/)
-
-]
-
----
-
-# Your first conveRsation
-
-### Write stuff in the console, then press "enter"
-
---
-
-Example: **addition**
-
-```{r}
-3 + 4
-```
-
---
-
-Example: **error**
-
-```{r, error=TRUE}
-3 + "4"
-```
-
----
-
-# Storing values
-
-### Use the "`<-`" symbol to assign _values_ to _objects_
-
---
-
-```{r}
-x <- 40
-x
-```
-
---
-
-```{r}
-x + 2
-```
-
----
-
-# Storing values
-
-### If you overwrite an object, R "forgets" the old value
-
---
-
-Example:
-
-```{r}
-x <- 42
-x
-```
-
---
-
-```{r}
-x <- 50
-x
-```
-
----
-
-# Storing values
+# Components
 
 <br>
 
-### You can also use the `=` symbol to assign values
+.leftcol45[
 
-```{r}
-x = 50
-x
-```
+### `survey.qmd` 
 
-### ...but you should use `<-`
+A **Quarto doc** defining the main survey content (pages, text, images, questions, etc).
+
+
+]
+
+.rightcol45[
+
+### `app.R` 
+
+An **R script** defining the survey Shiny app. It sets up the database and server, and launches the survey.
+
+]
 
 ---
 
-# Storing values
+.leftcol[.code50[
 
---
+````{markdown}
+---
+format: html
+echo: false
+warning: false
+---
 
-.leftcol[
+```{r}
+library(surveydown)
+```
 
-### **Pro tip 1**:
+::: {.sd_page id=welcome}
 
-### Shortcut for `<-` symbol
+# Welcome to our survey!
 
-.left[
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "What's your favorite penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo"
+  )
+)
 
-|OS | Shortcut
-|:--|:--------
-|mac | `option` + `-`
-|windows | `alt` + `-`
+sd_next()
+```
 
-]
+:::
 
-(see [here](https://support.posit.co/hc/en-us/articles/200711853-Keyboard-Shortcuts-in-the-RStudio-IDE) for more shortcuts)
+::: {.sd_page id=end}
 
-]
+This is the last page of the survey.
 
---
+```{r}
+sd_close()
+```
+
+:::
+
+````
+
+]]
 
 .rightcol[
 
-### **Pro tip 2**:
-
-### Always surround `<-` with spaces
-
-Example:
-
-```{r, eval=FALSE}
-x<-2
-```
-
-Does this mean `x <- 2` or `x < -2`?
+# .center[survey.qmd]
 
 ]
 
 ---
 
-# Storing values
+.leftcol[.code50[
 
-### You can store more than just numbers
+````{markdown}
+--- #<<
+format: html #<<
+echo: false #<<
+warning: false #<<
+--- #<<
+ 
+```{r} #<<
+library(surveydown) #<<
+``` #<<
 
---
+::: {.sd_page id=welcome}
 
-```{r}
-x <- "If you want to view paradise"
-y <- "simply look around and view it"
-```
-
---
-
-```{r}
-x
-y
-```
-
----
-
-.leftcol[
-
-## R ignores **extra space**
+# Welcome to our survey!
 
 ```{r}
-x     <-       2
-y  <-            3
-z        <- 4
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "What's your favorite penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo"
+  )
+)
+
+sd_next()
 ```
 
-Check:
+:::
+
+::: {.sd_page id=end}
+
+This is the last page of the survey.
+
 ```{r}
-x
-y
-z
+sd_close()
 ```
 
-]
+:::
 
---
+````
+
+]]
 
 .rightcol[
 
-## R cares about **casing**
+YAML Header 
 
-```{r}
-number <- 2
-Number <- 3
-numbeR <- 4
-```
-
-Check:
-
-```{r}
-number
-Number
-numbeR
-```
+<br>
+Load `surveydown` package
 
 ]
 
 ---
 
-# Use `#` for comments
+.leftcol[.code50[
 
-### R ignores everything after the `#` symbol
-
-Example:
-
-```{r}
-speed <- 42 # This is mph, not km/h
-speed
-```
-
+````{markdown}
+---
+format: html
+echo: false
+warning: false
 ---
 
-# Use meaningful variable names
-
---
-
-**Example**: You are recording the speed of a car in mph
-
---
-
-**Poor** variable name:
-
 ```{r}
-x <- 42
+library(surveydown)
 ```
 
---
+::: {.sd_page id=welcome} #<<
 
-**Good** variable name:
-
-```{r}
-speed <- 42
-```
-
---
-
-**Even better** variable name:
+# Welcome to our survey!
 
 ```{r}
-speed_mph <- 42
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "What's your favorite penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo"
+  )
+)
+
+sd_next()
 ```
 
----
+::: #<<
 
-class: center 
+::: {.sd_page id=end} #<<
 
-# Use standard casing styles
-
-<center>
-<img src="images/horst_casing.jpg" width=700>
-</center>
-Art by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
-
-
----
-
-# Use standard casing styles
-
-.leftcol60[
-
-<img src="images/horst_casing.jpg" width=600> Art by [Allison Horst](https://github.com/allisonhorst/stats-illustrations)
-
-]
-
-.rightcol40[
-
-I recommend using one of these:
-
-- `snake_case_uses_underscores`
-- `camelCaseUsesCaps`
-
-Example:
+This is the last page of the survey.
 
 ```{r}
-days_in_week <- 7
-monthsInYear <- 12
+sd_close()
 ```
 
-]
+::: #<<
 
----
+````
 
-## The workspace
-
-.leftcol[
-
-View all the current objects:
-
-```{r}
-objects()
-```
-
-]
-
---
+]]
 
 .rightcol[
 
-Remove an object by name:
+Define pages using "fences"
 
-```{r}
-rm(class)
-objects()
-```
+````{markdown}
+::: {.sd_page id=page_id}
+
+Page content
+
+:::
+````
 
 ]
 
 ---
 
-# View prior code in history pane
+.leftcol[.code50[
 
-<img src="images/rstudio_panes.png" width=500>
+````{markdown}
+---
+format: html
+echo: false
+warning: false
+---
 
---
+```{r}
+library(surveydown)
+```
 
-# Use "up" arrow see previous code
+::: {.sd_page id=welcome}
+
+# Welcome to our survey! #<<
+
+```{r} #<<
+sd_question( #<<
+  type  = "mc", #<<
+  id    = "penguins", #<<
+  label = "What's your favorite penguin?", #<<
+  option = c( #<<
+    "Adélie"    = "adelie", #<<
+    "Chinstrap" = "chinstrap", #<<
+    "Gentoo"    = "gentoo" #<<
+  ) #<<
+) #<<
+
+sd_next() #<<
+``` #<<
+
+:::
+
+::: {.sd_page id=end}
+
+This is the last page of the survey.
+
+```{r}
+sd_close()
+```
+
+:::
+
+````
+
+]]
+
+.rightcol[
+
+<br><br><br><br><br>Use markdown for page content
+
+Use `sd_question()` in code chunk for survey questions
+
+<br><br>Use `sd_next()` for next button
+
+]
 
 ---
 
-# Staying organized
+.leftcol[.code70[
 
---
+```{r}
+#| eval: false
 
-## 1) Save your code in .R files
+library(surveydown)
 
-> ### File > New File > R Script
+# Connects to database
+db <- sd_db_connect()
 
---
+# Main UI
+ui <- sd_ui()
 
-## 2) Keep work in R Project files
+server <- function(input, output, session) {
+  # Main server
+  sd_server(db)
+}
 
-> ### File > New Project...
-
----
-
-class: inverse
-
-```{r, echo=FALSE}
-countdown(
-  minutes      = 10,
-  warn_when    = 30,
-  update_every = 15,
-  bottom       = 0,
-  left         = 0,
-  font_size    = '2em'
+shiny::shinyApp(
+  ui = ui, 
+  server = server
 )
 ```
 
-.leftcol[.font80[
-
-## Your turn
-
-### A. Practice getting organized
-
-1. Open RStudio and create a new R project called `week1`.
-2. Create a new R script and save it as `practice.R`.
-3. Open the `practice.R` file and write your answers to these questions in it.
-
 ]]
 
-.rightcol[.font80[
+.rightcol[
 
-### B. Creating & working with objects
+# .center[app.R]
 
-1) Create objects to store the values in this table:
+]
 
-| City                 | Area<br>(sq mi) | Population<br>(thousands) |
-|----------------------|----------------|------------------------|
-| San Francisco, CA    | 47             | 884                    |
-| Chicago, IL          | 228            | 2,716                  |
-| Washington, DC       | 61             | 694                    |
+---
 
-2) Using the objects you created, answer the following questions:
+.leftcol[.code70[
 
-  - Which city has the highest density?
-  - How many _more_ people would need to live in DC for it to have the same population density as San Francisco?
+```{r}
+#| eval: false
 
-```{r, eval=FALSE, echo=FALSE}
-# Create values
-area_sf <- 47
-area_chicago <- 228
-area_dc <- 61
-pop_sf <- 884
-pop_chicago <- 2716
-pop_dc <- 694
+library(surveydown) #<<
 
-# Compute densities
-dens_sf <- pop_sf / area_sf
-dens_chicago <- pop_chicago / area_chicago
-dens_dc <- pop_dc / area_dc
-dens_sf
-dens_chicago
-dens_dc
+# Connects to database
+db <- sd_db_connect() #<<
 
-# Compute addition DC population to match SF density
-(dens_sf*area_dc) - pop_dc
+# Main UI
+ui <- sd_ui() #<<
+
+server <- function(input, output, session) {
+  
+  # Main server
+  sd_server(db) #<<
+
+}
+
+shiny::shinyApp(
+  ui = ui,
+  server = server
+)
 ```
+
 ]]
+
+.rightcol[
+
+Load package
+
+Connect to database
+
+Make standard UI 
+
+<br>Run surveydown server
+
+]
 
 ---
 
@@ -907,675 +513,45 @@ dens_dc
 
 ---
 
-# R as a calculator
-
-.leftcol[
-
-## Basic operators:
-
-### - Addition: `+`
-### - Subtraction: `-`
-### - Multiplication: `*`
-### - Division: `/`
-
-]
-
---
-
-.rightcol[
-
-## Other important operators:
-
-### - Power: `^`
-### - Integer Division: `%/%`
-### - Modulus: `%%`
-
-]
-
----
-
-# Integer division: `%/%`
-
-Integer division drops the remainder from regular division
-
---
-
-```{r}
-4 / 3 # Regular division
-4 %/% 3 # Integer division
-```
-
----
-
-# Integer division: `%/%`
-
-Integer division drops the remainder from regular division
-
---
-
-What will this return?
-
-```{r, eval=FALSE}
-4 %/% 4
-```
-
---
-
-```{r, echo=FALSE}
-4 %/% 4
-```
-
---
-
-What will this return?
-
-```{r, eval=FALSE}
-4 %/% 5
-```
-
---
-
-```{r, echo=FALSE}
-4 %/% 5
-```
-
----
-
-# Modulus operator: `%%`
-
-Modulus returns the _remainder_ after doing division
-
---
-
-```{r}
-5 %% 3
-```
-
---
-
-```{r}
-3.1415 %% 3
-```
-
----
-
-# Modulus operator: `%%`
-
-Modulus returns the _remainder_ after doing division
-
---
-
-What will this return?
-
-```{r, eval=FALSE}
-4 %% 4
-```
-
---
-
-```{r, echo=FALSE}
-4 %% 4
-```
-
---
-
-What will this return?
-
-```{r, eval=FALSE}
-4 %% 5
-```
-
---
-
-```{r, echo=FALSE}
-4 %% 5
-```
-
----
-
-## Odds and evens with `n %% 2`
-
---
-
-.leftcol[
-
-If `n %% 2` is `0`, `n` is **EVEN**
-
-```{r}
-10 %% 2
-12 %% 2
-```
-
-Also works with negative numbers!
-
-```{r}
--42 %% 2
-```
-
-]
-
---
-
-.rightcol[
-
-If `n %% 2` is `1`, `n` is **ODD**
-
-```{r}
-1 %% 2
-13 %% 2
-```
-
-Also works with negative numbers!
-
-```{r}
--47 %% 2
-```
-
-]
-
----
-
-## Number "chopping" with 10s
-
---
-
-.leftcol[
-
-The mod operator (`%%`) "chops" a number and returns everything to the _right_
-
-```{r}
-123456 %% 1
-123456 %% 10
-123456 %% 100
-```
-
-]
-
---
-
-.rightcol[
-
-Integer division (`%/%`) "chops" a number and returns everything to the _left_
-
-```{r}
-123456 %/% 1
-123456 %/% 10
-123456 %/% 100
-```
-
-]
-
----
-
-## Number "chopping" with 10s
-
-- `%%` returns everything to the _right_ (`"chop" ->`)
-- `%/%` returns everything to the _left_ (`<- "chop"`)
-- The "chop" point is always just to the _right_ of the chopping digit
-
-<br>
-
-<div style="width:1000px">
-<table class="table table-condensed">
-<thead>
-<tr class="header">
-<th>Example</th>
-<th>“Chop” point</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>1234 %% 1</code></td>
-<td><code>1234 |</code></td>
-<td>Right of the <code>1</code>’s digit</td>
-</tr>
-<tr class="even">
-<td><code>1234 %% 10</code></td>
-<td><code>123 | 4</code></td>
-<td>Right of the <code>10</code>’s digit</td>
-</tr>
-<tr class="odd">
-<td><code>1234 %% 100</code></td>
-<td><code>12 | 34</code></td>
-<td>Right of the <code>100</code>’s digit</td>
-</tr>
-<tr class="even">
-<td><code>1234 %% 1000</code></td>
-<td><code>1 | 234</code></td>
-<td>Right of the <code>1,000</code>’s digit</td>
-</tr>
-<tr class="odd">
-<td><code>1234 %% 10000</code></td>
-<td><code>| 1234</code></td>
-<td>Right of the <code>10,000</code>’s digit</td>
-</tr>
-</tbody>
-</table>
-</div>
-
----
-
-# Comparing things: **Relational operators**
-
---
-
-.leftcol[
-
-### Compare if condition is `TRUE` or `FALSE` using:
-
-- Less than: `<`
-- Less than or equal to : `<=`
-- Greater than or equal to: `>=`
-- Greater than: `>`
-- Equal: `==`
-- Not equal: `!=`
-
-]
-
---
-
-.rightcol[.code60[
-
-```{r}
-2 < 2
-2 <= 2
-(2 + 2) == 4
-(2 + 2) != 4
-"penguin" == "penguin"
-```
-
-]]
-
----
-
-# Comparing things: **Logical operators**
-
-<br>
-
-### Make multiple comparisons with:
-
-### - And: `&`
-### - Or: `|`
-### - Not: `!`
-
----
-
-# Comparing things: **Logical operators**
-
-.leftcol[
-
-With "and" (`&`), every part must be `TRUE`, otherwise the whole statement is `FALSE`:
-
-```{r}
-(2 == 2) & (3 == 3)
-(2 == 2) & (2 == 3)
-```
-
-]
-
---
-
-.rightcol[
-
-With "or" (`|`), if _any_ part is `TRUE`, the whole statement is `TRUE`:
-
-```{r}
-(2 == 2) | (3 == 3)
-(2 == 2) | (2 == 3)
-```
-
-]
-
----
-
-# Comparing things: **Logical operators**
-
-The "not" (`!`) symbol produces the _opposite_ statement:
-
---
-
-```{r, eval=FALSE}
-! (2 == 2)
-```
-
---
-
-```{r, echo=FALSE}
-! (2 == 2)
-```
-
---
-
-```{r, eval=FALSE}
-! (2 == 2) | (3 == 3)
-```
-
---
-
-```{r, echo=FALSE}
-! (2 == 2) | (3 == 3)
-```
-
---
-
-```{r, eval=FALSE}
-! ((2 == 2) | (3 == 3))
-```
-
---
-
-```{r, echo=FALSE}
-! ((2 == 2) | (3 == 3))
-```
-
----
-
-# Comparing things: **Logical operators**
-
-### Order precedence for logical operators: `! > & > |`
-
---
-
-.leftcol[
-
-```{r}
-TRUE | FALSE & FALSE
-(TRUE | FALSE) & FALSE
-```
-
-]
-
---
-
-.rightcol[
-
-```{r}
-! TRUE | TRUE
-! (TRUE | TRUE)
-```
-
-]
-
----
-
-# Comparing things: **Logical operators**
-
-.leftcol[
-
-### **Pro tip**: Use parentheses
-
-```{r}
-! 3 == 5   # Confusing
-! (3 == 5) # Less confusing
-```
-
-]
-
----
-
-## Other important points
-
-.leftcol[
-
-### R follows BEDMAS:
-
-1. **B**rackets
-2. **E**xponents
-3. **D**ivision
-4. **M**ultiplication
-5. **A**ddition
-6. **S**ubtraction
-
-]
-
---
-
-.rightcol[
-
-### **Pro tip**: Use parentheses
-
-```{r}
-1 + 2 * 4   # Confusing
-1 + (2 * 4) # Less confusing
-```
-
-]
-
----
-
 class: inverse
 
 ```{r, echo=FALSE}
 countdown(
-  minutes      = 8,
-  warn_when    = 30,
-  update_every = 15,
-  top          = 0,
-  font_size    = '2em'
+  minutes   = 5,
+  top       = 0,
+  right     = 0,
+  font_size = '2em'
 )
 ```
 
-# Your turn
+# Your turn - start with a [template](https://surveydown.org/templates)
 
-Consider the following objects:
-
-```{r}
-w <- TRUE
-x <- FALSE
-y <- TRUE
-```
-
-Write code to answer the following questions:
-1. Fill in _relational_ operators to make the following statement return `TRUE`:
-
-    `! (w __ x) & ! (y __ x)`
-
-2. Fill in _logical_ operators to make this statement return `FALSE`:
-
-    `! (w __ x) | (y __ x)`
-
-```{r, eval=FALSE, echo=FALSE}
-# 1.  Use relational operators to return TRUE
-! (w == x) & ! (y == x)
-
-# 2. Use logical operators to return FALSE
-! (w | x) | (y & x)
-```
-
----
-
-# Data Types
-
-|Type      | Description                 | Example
-|:---------|:----------------------------|:---------
-|`double`   | Numbers w/decimals (aka "float") | `3.14`
-|`integer`   | Numbers w/out decimals    | `42`
-|`character` | Text (aka "string") | `"this is some text"`
-|`logical`   | Used for comparing objects | `TRUE`, `FALSE`
-
----
-
-## Use `typeof()` to find the type
+**Step 1:** In R console, run:
 
 ```{r}
-typeof(2)
+#| eval: false
+
+surveydown::sd_create_survey()
 ```
+
+*Optional*: Specify a `path` and / or a `template`:
 
 ```{r}
-typeof("hello")
-```
-
-```{r}
-typeof(TRUE)
-```
-
----
-
-# Numeric types (there are 2)
-
---
-
-.leftcol[
-
-## Integers
-
-### No decimals (e.g. `7`)
-
-]
-
---
-
-.rightcol[
-
-## Doubles (aka "float")
-
-### Decimals (e.g. `7.0`)
-
-]
-
----
-
-## In R, numbers are "doubles" by default
-
---
-
-```{r}
-typeof(3)
-```
-
-### R assumes that `3` is really `3.0`
-
---
-
-### Make it an integer by adding `L`:
-
-```{r}
-typeof(3L)
-```
-
----
-
-# Character types
-
---
-
-### Use single or double quotes around anything:
-
-```{r}
-typeof('hello')
-typeof("3")
-```
-
---
-
-Use single / double quotes if the string _contains_ a quote symbol:
-
-```{r}
-typeof("don't")
-```
-
----
-
-# Logical types
-
---
-
-.leftcol[
-
-Logical data only have two values:<br>`TRUE` or `FALSE`
-
-```{r}
-typeof(TRUE)
-typeof(FALSE)
-```
-
-]
-
---
-
-.rightcol[
-
-Note that these have to be in all caps,<br>and **not** in quotes:
-
-```{r, error=TRUE}
-typeof('TRUE')
-typeof(True)
-```
-
-]
-
----
-
-# Logical types
-
-Use to answer questions about logical statements.
-
-Example: Is `1` greater than `2`?
-
-```{r}
-1 > 2
-```
-
---
-
-Example: Is `2` greater than `1`?
-
-```{r}
-1 < 2
-```
-
----
-
-## Special values
-
---
-
-`Inf`: Infinity (_or really big numbers_)
-
-```{r}
-1/0
-```
-
---
-
-`NaN`: Not a Number
-
-```{r}
-0/0
-```
-
---
-
-`NA`: Not available (_value is missing_)
-
---
-
-`NULL`: no value whatsoever
-
----
-
-class: inverse
-
-# Your turn
-
-```{r, echo=FALSE}
-countdown(
-  minutes      = 5,
-  warn_when    = 30,
-  update_every = 15,
-  top          = 0,
-  font_size    = '2em'
+#| eval: false
+
+surveydown::sd_create_survey(
+  path     = "path/to/folder",
+  template = "question_types"
 )
 ```
 
-## Will these return `TRUE` or `FALSE`?
+**Step 2:** In your IDE, open the `app.R` file, click "Run App", or in R console run:
 
-## (try to answer first, then run the code to check)
+```{r}
+#| eval: false
 
-- `! typeof('3') == typeof(3)`
-- `(typeof(7) != typeof("FALSE")) | FALSE`
-- `! (typeof(TRUE) == typeof(FALSE)) & FALSE`
+shiny::runApp('app.R')
+```
 
 ---
 
@@ -1584,8 +560,225 @@ countdown(
 
 ---
 
+## YAML Header
+
+The YAML header is at the top of the `.qmd` file:
+
+``` yaml
+---
+format: html
+echo: false
+warning: false
+---
+```
+
+---
+
+## Change the survey theme 
+
+Pick a different [bootswatch theme](https://bootswatch.com) with the `theme` key:
+
+```{markdown}
+---
+format: html
+echo: false
+warning: false
+theme: united #<<
+---
+```
+
+Make a custom theme with a `custom.scss` file
+
+```{markdown}
+---
+format: html
+echo: false
+warning: false
+theme: [united, custom.scss] #<<
+---
+```
+
+---
+
+## Progress bar
+
+You can modify the survey progress bar with the `barcolor` and `barposition` keys:
+
+.leftcol[
+
+Change to any color with `barcolor`:
+
+```{markdown}
+---
+format: html
+echo: false
+warning: false
+barcolor: #768692 #<<
+---
+```
+
+]
+
+.rightcol[
+
+Change position: `top`, `bottom`, or `none`
+
+```{markdown}
+---
+format: html
+echo: false
+warning: false
+barposition: bottom #<<
+---
+```
+
+]
+
+---
+
+# Inserting pages
+
+Insert new pages with `:::` symbols, like this
+
+```{r}
+#| eval: false
+
+::: {.sd_page id=page_id}
+
+Page content here
+
+:::
+```
+
+--
+
+Insert next buttons with the `sd_next()` function, like this (blank goes to next page):
+
+````markdown
+`r ''````{r}
+sd_next('next_page_id')
+```
+````
+
+---
+
+# Inserting questions
+
+Insert questions using the `sd_question()` function, like this:
+
+.leftcol[
+
+**Code**
+
+```{r}
+#| eval: false
+
+sd_question(
+  type   = 'mc',
+  id     = 'fruit',
+  label  = "1. Do you like fruit?",
+  option = c(
+    'Yes!'    = 'yes',
+    'Kind of' = 'kind_of',
+    'No :('   = 'no'
+  )
+)
+```
+
+Format is `"Label = value"`
+
+]
+
+.rightcol[
+
+**Output**
+
+```{r}
+#| echo: false
+
+sd_question(
+  type   = 'mc',
+  id     = 'fruit',
+  label  = "1. Do you like fruit?",
+  option = c(
+    'Yes!'    = 'yes',
+    'Kind of' = 'kind_of',
+    'No :('   = 'no'
+  )
+)
+```
+
+]
+
+---
+
+## surveydown supports lots of [question types](https://surveydown.org/docs/question-types)
+
+Some common types you may want to use:
+
+Type | Description
+-----|---------------------
+`mc` | Multiple choice question (single choice) 
+`mc_multiple` | Multiple choice question (multiple choices) 
+`mc_buttons` | Multiple choice question (large buttons)
+`select` | Drop down menu (choose one)
+`text` | Open text, single row
+`textarea` | Open text, block
+
+---
+
+# Embedding images
+
+I recommend just writing html code, like this
+
+```{html, eval=FALSE}
+<img src="https://surveydown.org/images/logo.png" width=250>
+```
+
+<img src="https://surveydown.org/images/logo.png" width=250>
+
+---
+
+# Centered image
+
+I recommend just writing html code, like this
+
+```{html, eval=FALSE}
+<center>
+<img src="https://surveydown.org/images/logo.png" width=250>
+</center>
+```
+
+<center>
+<img src="https://surveydown.org/images/logo.png" width=250>
+</center>
+
+---
+
 class: center, middle
 
-# Go to the [schedule](https://p4a.seas.gwu.edu/2025-Spring/schedule.html)
+# Try out the surveydown [studio app](https://github.com/surveydown-dev/sdApps)
 
-# ...and read carefully!
+## `sdApps::sd_studio()`
+
+---
+
+class: inverse
+
+```{r, echo=FALSE}
+countdown(
+  minutes   = 10,
+  top       = 0,
+  right     = 0,
+  font_size = '2em'
+)
+```
+
+## Your turn
+
+- Open and edit the `survey.qmd` file that you previously made.
+- Pick a topic for your survey (a food, an animal, a sports team...whatever).
+- Draft a survey about that topic. Include the following:
+    - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
+    - Pages 2 to N: Add different questions about the topic using several different question types.
+- Try out different themes to change the look and feel. 

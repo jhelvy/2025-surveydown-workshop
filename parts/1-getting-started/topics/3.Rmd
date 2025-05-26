@@ -1,12 +1,9 @@
 
 class: inverse, middle
 
-# Week `r rmarkdown::metadata$week`: .fancy[`r rmarkdown::metadata$title`]
+# .fancy[`r rmarkdown::metadata$title`]
 
-### 1. Course orientation
-
-### BREAK
-
-### 2. Getting started with R & RStudio
-### 3. .orange[Operators & data types]
-### 4. Preview of HW 1
+### 1. What is surveydown?
+### 2. surveydown basics
+### 3. .orange[Building your first surveydown survey!]
+### 4. Adding survey content
