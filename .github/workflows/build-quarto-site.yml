@@ -44,6 +44,7 @@ jobs:
             any::metathis
             any::surveydown
             any::here
+            any::xaringanExtra
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2

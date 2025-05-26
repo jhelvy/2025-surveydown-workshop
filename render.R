@@ -2,7 +2,10 @@ library(renderthis)
 
 # Render slides 
 parts <- c(
-    'getting-started', 'conditional-control', 'data-handling', 'reactivity'
+    'getting-started', 
+    'conditional-control', 
+    'data-handling', 
+    'reactivity'
 )
 for (part in parts) {
     path_rmd <- file.path('parts', part, 'index.Rmd')

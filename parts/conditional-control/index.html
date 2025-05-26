@@ -135,7 +135,7 @@ server &lt;- function(input, output, session) {
 *   input$penguins == "other" ~ "penguins_other"
 * )
 
-  sd_server(db = db)
+  # ...other server code...
 
 }
 ```
@@ -155,9 +155,6 @@ server &lt;- function(input, output, session) {
 
 ---
 
-    
----
-
 
 
 class: inverse, middle
@@ -169,23 +166,96 @@ class: inverse, middle
 
 ---
 
+class: center
+
+## Conditional [skip forward](https://surveydown.org/docs/conditional-logic#conditional-forward-page-skipping) 
+
+&lt;br&gt;
+
+Example: participant screen out
+
+&lt;center&gt;
+&lt;img src="images/screenout.png" width=60%&gt;
+&lt;/center&gt;
+
+---
+
+.leftcol[
+
+In `survey.qmd`:
+
+Target screenout question 
+
+
+``` r
+sd_question(
+  type  = 'mc',
+  id    = 'vehicle_ownership',
+  label = "Do you own a vehicle?",
+  option = c(
+    'Yes' = 'yes',
+    'No'  = 'no'
+  )
+)
+```
+
+Target screenout page
+
+
+``` markdown
+::: {.sd_page id=screenout}
+
+Sorry, but you are not qualified to take our survey.
+
+:::
+```
+
+]
+
+---
+
+.leftcol60[
+
+In `app.R`:
+
+Skip forward condition in 
+
+
+``` r
+server &lt;- function(input, output, session) {
+
+* sd_skip_forward(
+*   input$vehicle_ownership == "no" ~ "screenout"
+* )
+
+  # ...other server code...
+
+}
+```
+
+]
+
+---
+
+class: center, middle
+
+## For both conditional display and conditional skip forward,&lt;br&gt;there are lots of [conditions to choose from](https://surveydown.org/docs/conditional-logic#common-conditions)
+
+---
+
 class: inverse
 
-<div class="countdown" id="timer_ba7f7536" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_b8f30284" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
----
-
 ## Your turn
 
-- Open and edit the `practiceSurvey.qmd` file.
-- Pick a topic for your survey (a food, an animal, a sports team...whatever).
-- Draft a survey about that topic. Include the following:
-    - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
-    - Page 2: Add one simple multiple choice question about the topic and another that will only display depending on a specific choice in the first question
-    - Pages 3 &amp; 4: These pages should be two different "end" conditions. Respondents should be sent to either page based on their choices in the multiple choice question on page 2.
+- Open the survey you were editing from your last practice.
+- Add conditional logic content:
+    - Add one simple multiple choice question about your survey topic and another that will only display depending on a specific choice in the first question.
+    - Add a target page that respondents should be sent to based on their choices in another question in an earlier page (e.g., a multiple choice question).
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
