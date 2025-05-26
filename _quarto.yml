@@ -11,14 +11,25 @@ project:
     - "parts"
 
 website:
-  image: images/logo.png
+  image: images/logo.ico
+  favicon: images/logo.ico
   site-url: https://jhelvy.github.io/2025-surveydown-workshop/
   repo-url: https://github.com/jhelvy/2025-surveydown-workshop/
-  description: 'Slides and content for my 2025 workshop on building surveys with surveydown.'
+  description: 'Content for my 2025 workshop on building surveys with surveydown.'
   search: false
-  open-graph: true
+  open-graph:
+    locale: es_ES
+    site-name: https://surveydown.org
+  twitter-card:
+    creator: "@johnhelveston"
+    site: "@johnhelveston"
+    image: logo.png
+    card-style: summary_large_image
+    image-width: 150
+    image-height: 150
   navbar:
     background: primary
+    search: true
     left:
       - text: Home
         icon: house-door-fill
@@ -37,6 +48,10 @@ website:
           href: parts/data-handling.html
         - text: Reactivity
           href: parts/reactivity.html
+    right:
+      - icon: github
+        href: https://github.com/jhelvy/2025-surveydown-workshop
+
   page-footer:
     background: dark
     center:
@@ -50,3 +65,9 @@ format:
     smooth-scroll: true
     link-external-newwindow: true
     include-in-header: "_includes/header.html"
+
+code-link: true
+knitr:
+  opts_chunk:
+    comment: "#>"
+fig-retina: 3
