@@ -59,7 +59,7 @@ website:
 
 format:
   html:
-    theme: flatly
+    theme: [flatly, theme.scss]
     css: styles.css
     anchor-sections: true
     smooth-scroll: true

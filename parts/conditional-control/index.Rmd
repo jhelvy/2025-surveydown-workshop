@@ -21,12 +21,6 @@ output:
 ```{r setup, child="../setup.Rmd"}
 ```
 
-```{r}
-#| include: false
-
-source('functions.R')
-```
-
 class: center, middle, inverse
 
 .leftcol40[
@@ -46,4 +40,120 @@ class: center, middle, inverse
 
 ---
 
-Content
+```{r child="topics/0.Rmd"}
+```
+
+---
+
+```{r child="topics/1.Rmd"}
+```
+
+---
+
+class: center
+
+## [Conditional question display](https://surveydown.org/docs/conditional-logic#conditional-question-display)
+
+<center>
+<img src="images/show_if.gif" width=68%>
+</center>
+
+---
+
+## Conditional question display
+
+Define both _conditional_ and _target_ questions in `survey.qmd`
+
+.leftcol70[.code70[
+
+```{r}
+#| eval: false
+
+# Conditional question
+sd_question(
+  type  = "mc",
+  id    = "penguins",
+  label = "Which is your favorite type of penguin?",
+  option = c(
+    "Adélie"    = "adelie",
+    "Chinstrap" = "chinstrap",
+    "Gentoo"    = "gentoo",
+    "Other"     = "other"
+  )
+)
+
+# Target question
+sd_question(
+  type  = "text",
+  id    = "penguins_other", 
+  label = "Please specify the other penguin type:"
+)
+```
+
+]]
+
+---
+
+## Conditional question display
+
+Define condition with `sd_show_if` in `app.R`
+
+```{r}
+#| eval: false
+
+server <- function(input, output, session) {
+
+  sd_show_if( #<<
+    input$penguins == "other" ~ "penguins_other" #<<
+  ) #<<
+
+  sd_server(db = db)
+
+}
+```
+
+--
+
+1) The structure of the condition is always:
+
+```{r}
+#| eval: false
+
+<condition> ~ "target_question_id"
+```
+
+--
+
+2) Note the use of `input$penguins`
+
+---
+
+    
+---
+
+```{r child="topics/2.Rmd"}
+```
+
+---
+
+class: inverse
+
+```{r, echo=FALSE}
+countdown(
+  minutes   = 15,
+  top       = 0,
+  right     = 0,
+  font_size = '2em'
+)
+```
+
+---
+
+## Your turn
+
+- Open and edit the `practiceSurvey.qmd` file.
+- Pick a topic for your survey (a food, an animal, a sports team...whatever).
+- Draft a survey about that topic. Include the following:
+    - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
+    - Page 2: Add one simple multiple choice question about the topic and another that will only display depending on a specific choice in the first question
+    - Pages 3 & 4: These pages should be two different "end" conditions. Respondents should be sent to either page based on their choices in the multiple choice question on page 2.

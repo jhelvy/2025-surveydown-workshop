@@ -21,12 +21,6 @@ output:
 ```{r setup, child="../setup.Rmd"}
 ```
 
-```{r}
-#| include: false
-
-source('functions.R')
-```
-
 class: center, middle, inverse
 
 .leftcol40[
