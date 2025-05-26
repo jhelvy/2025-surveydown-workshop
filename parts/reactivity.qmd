@@ -1,0 +1,8 @@
+---
+title: "Reactivity"
+params:
+  part: "reactivity"
+---
+
+```{r child = here::here("fragments", "part.qmd")}
+```

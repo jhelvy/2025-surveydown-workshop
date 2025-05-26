@@ -1,7 +1,7 @@
 ---
-title: "Getting Started"
+title: "Data Handling"
 params:
-  class: "1-getting-started"
+  part: "data-handling"
 ---
 
 ```{r child = here::here("fragments", "part.qmd")}

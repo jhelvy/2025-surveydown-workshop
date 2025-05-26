@@ -6,7 +6,6 @@ project:
     browser: false
   render:
     - "*.qmd"
-    - "!parts"
     - "!fragments"
   resources:
     - "parts"
@@ -18,26 +17,34 @@ website:
   description: 'Slides and content for my 2025 workshop on building surveys with surveydown.'
   search: false
   open-graph: true
-  twitter-card:
-    site: "@johnhelveston"
   navbar:
     background: primary
     left:
       - text: Home
-        href: index.qmd
-      - text: Getting Started
-        href: getting-started.qmd
-      - text: Data Handling
-        href: data-handling.qmd
-      - text: Reactivity
-        href: reactivity.qmd
+        icon: house-door-fill
+        href: index.html
+      - text: Install
+        icon: tools
+        href: install.html
+      - text: Parts
+        icon: puzzle-fill
+        menu: 
+        - text: Getting Started
+          href: parts/getting-started.html
+        - text: Conditional Control
+          href: parts/conditional-control.html
+        - text: Data Handling
+          href: parts/data-handling.html
+        - text: Reactivity
+          href: parts/reactivity.html
   page-footer:
+    background: dark
     center:
-      - text: "Workshop: Building surveys with surveydown (Spring 2025)<br><a href='https://www.jhelvy.com'><i class='fas fa-user'></i> Dr. John Paul Helveston</a> | <a href='mailto:jph@gwu.edu'><i class='fas fa-envelope'></i> jph@gwu.edu</a> | <a href='https://github.com/jhelvy/2025-surveydown-workshop'><i class='fa fa-github'></i></a> | <a href='https://bsky.app/profile/jhelvy.bsky.social'><i class='fa fa-brands fa-bluesky'></i></a><br><a href='LICENSE.html'>LICENSE: CC-BY-SA <i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i></a>"
+      - text: "Workshop on building surveys with surveydown (Spring 2025)<br><a href='https://www.jhelvy.com'><i class='fas fa-user'></i> Dr. John Paul Helveston</a> | <a href='mailto:jph@gwu.edu'><i class='fas fa-envelope'></i> jph@gwu.edu</a> | <a href='https://github.com/jhelvy/2025-surveydown-workshop'><i class='fa fa-github'></i></a> | <a href='https://bsky.app/profile/jhelvy.bsky.social'><i class='fa fa-brands fa-bluesky'></i></a><br><a href='LICENSE.html'>LICENSE: CC-BY-SA <i class='fab fa-creative-commons'></i><i class='fab fa-creative-commons-by'></i><i class='fab fa-creative-commons-sa'></i></a>"
 
 format:
   html:
-    theme: lux
+    theme: flatly
     css: styles.css
     anchor-sections: true
     smooth-scroll: true

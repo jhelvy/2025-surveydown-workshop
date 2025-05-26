@@ -1,21 +1,63 @@
 ---
-title: "Building surveys with surveydown"
+title: ""
+image: "logo.png"
+execute: 
+  echo: false
+  message: false
+  warning: false
+about:
+  template: solana
+  image-width: 16em
+  id: hero-heading
 ---
 
-<hr>
+### A workshop on building surveys with the [surveydown](https://surveydown.org/) platform
 
-George Washington University
+::: {.grid}
 
-<hr>
+::: {.g-col-12 .g-col-md-6}
 
-# Part 1: [Getting started](getting-started.qmd)
+<div class="card h-100" id="card-first-color">
+<div class="card-body d-flex flex-column">
+<p class="card-text">
+<div style="margin-top: auto;"><a href="parts/getting-started.html">PART 1: Getting Started</a></div>
+Learn the basic structure of a surveydown survey and create your first survey</p>
+</div>
+</div>
 
-Description
+:::
 
-# Part 2: [Data Handling](data-handling.qmd)
+::: {.g-col-12 .g-col-md-6}
 
-Description
+<div class="card h-100" id="card-second-color">
+<div class="card-body d-flex flex-column">
+<div style="margin-top: auto;"><a href="conditional-control.html">PART 2: Conditional Control</a></div>
+Take control over page navigation and content display based on question responses</p>
+</div>
+</div>
 
-# Part 3: [Reactivity](reactivity.qmd)
+:::
 
-Description
+::: {.g-col-12 .g-col-md-6}
+
+<div class="card h-100" id="card-third-color">
+<div class="card-body d-flex flex-column">
+<div style="margin-top: auto;"><a href="data-handling.html">PART 3: Data Handling</a></div>
+Setup up your database to store response data and dynamically use the data in your survey</p>
+</div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+<div class="card h-100" id="card-first-color">
+<div class="card-body d-flex flex-column">
+<div style="margin-top: auto;"><a href="reactivity.html">PART 4: Reactivity</a></div>
+Leverage shiny's powerful reactivity framework to make your surveys more dynamic</p>
+</div>
+</div>
+
+:::
+
+:::
