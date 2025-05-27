@@ -239,7 +239,7 @@ class: center
 
 class: inverse
 
-<div class="countdown" id="timer_f931598f" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_cfb58561" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -264,6 +264,106 @@ class: inverse, middle
 
 ---
 
+# Static Data Fetching
+
+Once your database is properly set up, you can fetch the data using:
+
+
+``` r
+db &lt;- sd_db_connect()
+data &lt;- sd_get_data(db)
+```
+
+Or simply:
+
+
+``` r
+data &lt;- sd_get_data(sd_db_connect())
+```
+ 
+---
+
+## Reactive Data Fetching
+
+You can also reactively fetch the data live inside the survey
+
+In `app.R`:
+
+.leftcol60[
+
+
+``` r
+db &lt;- sd_db_connect()
+
+server &lt;- function(input, output, session) {
+
+* data &lt;- sd_get_data(db, refresh_interval = 5)
+
+  sd_server()
+
+}
+```
+
+]
+
+---
+
+## Reactive Data Fetching
+
+Use the reactive data to create some output
+
+.leftcol55[
+
+In `app.R`:
+
+
+``` r
+server &lt;- function(input, output, session) {
+
+  data &lt;- sd_get_data(db, refresh_interval = 5)
+
+  output$my_plot &lt;- renderPlot({  
+*   my_data &lt;- data()
+    
+    # insert code here to make a plot 
+    
+  })
+
+  sd_server()
+
+}
+```
+
+]
+
+.rightcol45[
+
+In `survey.qmd`:
+
+
+```` markdown
+```{r}
+plotOutput("my_plot")
+```
+````
+
+]
+
+---
+
+class: inverse
+
+<div class="countdown" id="timer_87d2aa1d" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+## Your turn
+
+- Use `sd_get_data(db)` to read in a copy of your survey response data.
+- Edit your `app.R` file to reactively access your survey data.
+- Use your data to make a plot about your data.
+- Display your plot in your `survey.qmd` file with `plotOutput("my_plot")`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

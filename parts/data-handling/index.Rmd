@@ -234,3 +234,110 @@ countdown(
 
 ---
 
+# Static Data Fetching
+
+Once your database is properly set up, you can fetch the data using:
+
+```{r}
+#| eval: false
+
+db <- sd_db_connect()
+data <- sd_get_data(db)
+```
+
+Or simply:
+
+```{r}
+#| eval: false
+
+data <- sd_get_data(sd_db_connect())
+```
+ 
+---
+
+## Reactive Data Fetching
+
+You can also reactively fetch the data live inside the survey
+
+In `app.R`:
+
+.leftcol60[
+
+```{r}
+#| eval: false
+
+db <- sd_db_connect()
+
+server <- function(input, output, session) {
+
+  data <- sd_get_data(db, refresh_interval = 5) #<<
+
+  sd_server()
+
+}
+```
+
+]
+
+---
+
+## Reactive Data Fetching
+
+Use the reactive data to create some output
+
+.leftcol55[
+
+In `app.R`:
+
+```{r}
+#| eval: false
+
+server <- function(input, output, session) {
+
+  data <- sd_get_data(db, refresh_interval = 5)
+
+  output$my_plot <- renderPlot({  
+    my_data <- data() #<<
+    
+    # insert code here to make a plot 
+    
+  })
+
+  sd_server()
+
+}
+```
+
+]
+
+.rightcol45[
+
+In `survey.qmd`:
+
+````{markdown}
+```{r}
+plotOutput("my_plot")
+```
+````
+
+]
+
+---
+
+class: inverse
+
+```{r, echo=FALSE}
+countdown(
+  minutes   = 10,
+  top       = 0,
+  right     = 0,
+  font_size = '2em'
+)
+```
+
+## Your turn
+
+- Use `sd_get_data(db)` to read in a copy of your survey response data.
+- Edit your `app.R` file to reactively access your survey data.
+- Use your data to make a plot about your data.
+- Display your plot in your `survey.qmd` file with `plotOutput("my_plot")`
