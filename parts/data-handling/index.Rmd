@@ -40,4 +40,197 @@ class: center, middle, inverse
 
 ---
 
-Content
+```{r child="topics/0.Rmd"}
+```
+
+---
+
+```{r child="topics/1.Rmd"}
+```
+
+---
+
+class: center 
+
+.leftcol[
+
+## Data is stored in any PostgreSQL database
+
+<center>
+<img src="images/postgresql.svg" width=70%>
+</center>
+
+]
+
+.rightcol[
+
+## We use [Supabase](https://supabase.com/) as a free, open-source option
+
+<center>
+<img src="images/supabase.svg" width=70%>
+</center>
+
+]
+
+---
+
+## Store data in [Supabase](https://supabase.com/)
+
+Steps to connect a database via Supabase:
+
+1. Create a Supabase account
+2. Create a Supabase project
+3. Copy your credentials
+
+<br>
+
+## Full details on the [Storing Data docs page](https://surveydown.org/docs/storing-data)
+
+---
+
+## Creating a project
+
+.leftcol60[
+
+<center>
+<img src="images/supabase-project.png" width=100%>
+</center>
+
+]
+
+.rightcol40[
+
+- Choose a project name (this is your "database")
+- Each database can have multiple tables
+- Choose a strong password
+
+]
+
+---
+
+## Getting your Supabase credentials
+
+.leftcol[
+
+Click the "connect" button in your project
+
+<center>
+<img src="images/supabase-connect.png" width=100%>
+</center>
+
+]
+
+.rightcol[
+
+Find the “Transaction pooler”  section
+
+<center>
+<img src="images/supabase-connection.png" width=100%>
+</center>
+
+]
+
+---
+
+## Store your database credentials
+
+.leftcol[
+
+In your R console, run:
+
+```{r}
+#| eval: false
+
+surveydown::sd_db_config()
+```
+
+<br>
+
+Credentials are stored in a `.env` file in your root project folder.
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/sd-db-config.png" width=100%>
+</center>
+
+]
+
+---
+
+.leftcol[
+
+# .center[app.R]
+
+.code70[
+
+```{r}
+#| eval: false
+
+library(surveydown)
+
+# Connects to database
+db <- sd_db_connect() #<<
+
+# Main UI
+ui <- sd_ui()
+
+server <- function(input, output, session) {
+  # Main server
+  sd_server(db)
+}
+
+shiny::shinyApp(
+  ui = ui, 
+  server = server
+)
+```
+
+]]
+
+.rightcol[
+
+<br><br><br><br>
+
+The `sd_db_connect()` function uses the `.env` file to make the database connection. 
+]
+
+---
+
+class: center
+
+## Use `sdApps::sd_dashboard()` to locally view data
+
+<center>
+<img src="images/dashboard_1.png" width=80%>
+</center>
+
+---
+
+class: inverse
+
+```{r, echo=FALSE}
+countdown(
+  minutes   = 10,
+  top       = 0,
+  right     = 0,
+  font_size = '2em'
+)
+```
+
+## Your turn
+
+- Create a Supabase account and database. 
+- Run `surveydown::sd_db_config()` in your console to store your Supabase credentials. 
+- Run your survey locally, answer questions to generate data.
+- View your response data with `sdApps::sd_dashboard()`
+
+---
+
+```{r child="topics/2.Rmd"}
+```
+
+---
+
