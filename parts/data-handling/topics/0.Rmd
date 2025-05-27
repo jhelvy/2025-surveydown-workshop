@@ -3,7 +3,5 @@ class: inverse, middle
 
 # .fancy[`r rmarkdown::metadata$title`]
 
-### 1. What is surveydown?
-### 2. surveydown basics
-### 3. Building your first surveydown survey!
-### 4. Adding survey content
+### 1. Storing data
+### 2. Fetching data
