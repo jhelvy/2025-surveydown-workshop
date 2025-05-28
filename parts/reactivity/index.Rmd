@@ -325,7 +325,12 @@ server <- function(input, output, session) {
       option = c("Yes" = "yes", "No" = "no")
     )
   })
-
+  
+  # Only show the pet_owner question if pet_type is answered
+  sd_show_if(
+    sd_is_answered("pet_type") ~ "pet_owner"
+  )
+  
   sd_server()
 }
 ```
@@ -357,6 +362,11 @@ server <- function(input, output, session) {
       option = c("Yes" = "yes", "No" = "no")
     )
   })
+  
+  # Only show the pet_owner question if pet_type is answered
+  sd_show_if(
+    sd_is_answered("pet_type") ~ "pet_owner"
+  )
 
   sd_server()
 }
@@ -397,6 +407,11 @@ server <- function(input, output, session) {
       option = c("Yes" = "yes", "No" = "no") #<< 
     ) #<<
   })
+  
+  # Only show the pet_owner question if pet_type is answered
+  sd_show_if(
+    sd_is_answered("pet_type") ~ "pet_owner"
+  )
 
   sd_server()
 }
@@ -409,6 +424,51 @@ server <- function(input, output, session) {
 <br><br><br><br><br>
 
 Use `sd_question` to define the question
+
+]
+
+---
+
+### **Solution**: Define the entire question in the server
+
+.leftcol75[.code70[
+
+```{r}
+#| eval: false
+
+library(glue)
+
+server <- function(input, output, session) {
+
+  observe({
+    # Trigger with any change to input$pet_type
+    pet_type <- input$pet_type
+
+    # Make the question
+    sd_question(
+      type   = "mc",
+      id     = "pet_owner", 
+      label  = glue("Are you a {pet_type} owner?"), 
+      option = c("Yes" = "yes", "No" = "no") 
+    )
+  })
+  
+  # Only show the pet_owner question if pet_type is answered
+  sd_show_if( #<<
+    sd_is_answered("pet_type") ~ "pet_owner" #<<
+  ) #<<
+
+  sd_server()
+}
+```
+
+]]
+
+.rightcol25[
+
+<br><br><br><br><br><br><br><br><br><br>
+
+Hide the `pet_owner` question until the `pet_type` is answered
 
 ]
 
