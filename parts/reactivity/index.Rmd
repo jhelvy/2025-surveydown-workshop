@@ -200,9 +200,9 @@ Question in `survey.qmd`:
 sd_question(
   type  = "mc",
   id    = "penguins",
-  label = "What's your favorite penguin?",
+  label = "What's your favorite penguin?", #<<
   option = c(
-    "Adélie"    = "adelie", #<<
+    "Adélie"    = "adelie", 
     "Chinstrap" = "chinstrap",
     "Gentoo"    = "gentoo"
   )
@@ -414,7 +414,7 @@ Use `sd_question` to define the question
 
 ---
 
-## Change the question text based on respondent choices
+## Use `sd_output()` to display the reactive question
 
 .leftcol60[
 
@@ -454,4 +454,48 @@ Are you a **cat** owner?
 
 ]
 
+---
 
+class: inverse
+
+```{r, echo=FALSE}
+countdown(
+  minutes   = 10,
+  top       = 0,
+  right     = 0,
+  font_size = '2em'
+)
+```
+
+## Your turn
+
+.leftcol70[
+
+Define a question inside your server (`app.R` file):
+
+```{r}
+#| eval: false
+
+server <- function(input, output, session) {
+
+  observe({
+    sd_question( 
+      type = "mc",
+      id   = "id", 
+      ...
+    ) 
+  })
+
+  sd_server()
+}
+```
+
+Display the question inside your survey (`survey.qmd` file):
+
+```{r}
+#| eval: false
+
+sd_output("id", type = "question")
+```
+
+]
