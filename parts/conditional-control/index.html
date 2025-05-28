@@ -168,13 +168,13 @@ class: inverse, middle
 
 class: center, middle
 
-# Example 1: **Participant screen out**
+# Example: **Participant screen out**
 
 ---
 
 class: center
 
-### Example 1: **Participant screen out**
+### Example: **Participant screen out**
 
 &lt;br&gt;
 
@@ -237,115 +237,13 @@ Sorry, but you are not qualified to take our survey.
 
 class: center, middle
 
-# Example 2: **Information treatment**
-
----
-
-background-color: #fff
-class: center
-
-### Example 2: **Information treatment**
-
-&lt;br&gt;
-
-&lt;center&gt;
-&lt;img src="images/info_treatment.png" width=100%&gt;
-&lt;/center&gt;
-
----
-
-.leftcol60[
-
-In `app.R`: 
-
-
-``` r
-server &lt;- function(input, output, session) {
-  
-  # Generate random condition
-  a_or_b &lt;- sample(c('a', 'b'), 1)
-  
-  # Store the condition value
-  sd_store_value(a_or_b)
-  
-  # Use sd_skip_forward to direct to target page
-  sd_skip_forward(
-    a_or_b == 'a' ~ 'page2a',
-    a_or_b == 'b' ~ 'page2b'
-  )
-  
-  sd_server()
-  
-}
-```
-
-]
-
-.rightcol40[
-
-`survey.qmd` has the following:
-
-
-``` markdown
-::: {.sd_page id=page1}
-
-Page 1 content
-
-:::
-```
-
-
-``` markdown
-::: {.sd_page id=page2a}
-
-Page 2a content
-
-:::
-```
-
-
-``` markdown
-::: {.sd_page id=page2b}
-
-Page 2b content
-
-:::
-```
-
-
-``` markdown
-::: {.sd_page id=page3}
-
-Page 3 content
-
-:::
-```
-
-]
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-class: center, middle
-
 ## For both conditional display and conditional skip forward,&lt;br&gt;there are lots of [conditions to choose from](https://surveydown.org/docs/conditional-logic#common-conditions)
 
 ---
 
 class: inverse
 
-<div class="countdown" id="timer_b8aa5022" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_4dff9e96" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
