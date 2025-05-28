@@ -116,25 +116,27 @@ server <- function(input, output, session) {
 
 ---
 
+class: center, middle
+
+# Example 1: **Participant screen out**
+
+---
+
 class: center
 
-## Conditional [skip forward](https://surveydown.org/docs/conditional-logic#conditional-forward-page-skipping) 
+### Example 1: **Participant screen out**
 
 <br>
 
-Example: participant screen out
-
 <center>
-<img src="images/screenout.png" width=60%>
+<img src="images/screenout.png" width=70%>
 </center>
 
 ---
 
-.leftcol[
+.leftcol60[
 
-In `survey.qmd`:
-
-Target screenout question 
+In `survey.qmd`: Target screenout question 
 
 ```{r}
 #| eval: false
@@ -150,25 +152,7 @@ sd_question(
 )
 ```
 
-Target screenout page
-
-````{markdown}
-::: {.sd_page id=screenout}
-
-Sorry, but you are not qualified to take our survey.
-
-:::
-````
-
-]
-
----
-
-.leftcol60[
-
 In `app.R`:
-
-Skip forward condition in 
 
 ```{r}
 #| eval: false
@@ -185,6 +169,119 @@ server <- function(input, output, session) {
 ```
 
 ]
+
+.rightcol40[
+
+Target screenout page
+
+````{markdown}
+::: {.sd_page id=screenout}
+
+Sorry, but you are not qualified to take our survey.
+
+:::
+````
+
+]
+
+---
+
+class: center, middle
+
+# Example 2: **Information treatment**
+
+---
+
+background-color: #fff
+class: center
+
+### Example 2: **Information treatment**
+
+<br>
+
+<center>
+<img src="images/info_treatment.png" width=100%>
+</center>
+
+---
+
+.leftcol60[
+
+In `app.R`: 
+
+```{r}
+#| eval: false
+
+server <- function(input, output, session) {
+  
+  # Generate random condition
+  a_or_b <- sample(c('a', 'b'), 1)
+  
+  # Store the condition value
+  sd_store_value(a_or_b)
+  
+  # Use sd_skip_forward to direct to target page
+  sd_skip_forward(
+    a_or_b == 'a' ~ 'page2a',
+    a_or_b == 'b' ~ 'page2b'
+  )
+  
+  sd_server()
+  
+}
+```
+
+]
+
+.rightcol40[
+
+`survey.qmd` has the following:
+
+````{markdown}
+::: {.sd_page id=page1}
+
+Page 1 content
+
+:::
+````
+
+````{markdown}
+::: {.sd_page id=page2a}
+
+Page 2a content
+
+:::
+````
+
+````{markdown}
+::: {.sd_page id=page2b}
+
+Page 2b content
+
+:::
+````
+
+````{markdown}
+::: {.sd_page id=page3}
+
+Page 3 content
+
+:::
+````
+
+]
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
