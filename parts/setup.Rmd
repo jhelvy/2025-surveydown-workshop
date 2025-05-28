@@ -46,3 +46,20 @@ meta() %>%
     twitter_card_type = "summary_large_image"
   )
 ```
+
+class: center, middle, inverse
+
+.leftcol40[
+
+<center>
+<img src="https://surveydown.org/images/logo.png" width=100%>
+</center>
+
+]
+
+.rightcol60[
+
+<br><br>
+# .font150[.fancy[`r rmarkdown::metadata$title`]]
+
+]
