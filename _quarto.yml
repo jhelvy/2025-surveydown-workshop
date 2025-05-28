@@ -9,6 +9,7 @@ project:
     - "!fragments"
   resources:
     - "parts"
+    - "examples.zip"
 
 website:
   image: images/logo.ico
@@ -37,6 +38,9 @@ website:
       - text: Install
         icon: tools
         href: install.html
+      - text: Examples
+        icon: download
+        href: examples.zip
       - text: Parts
         icon: puzzle-fill
         menu: 
