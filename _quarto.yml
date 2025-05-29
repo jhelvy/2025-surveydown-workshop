@@ -12,7 +12,6 @@ project:
     - "examples.zip"
 
 website:
-  title: "surveydown workshop"
   image: images/logo.ico
   favicon: images/logo.ico
   site-url: https://jhelvy.github.io/2025-surveydown-workshop/
