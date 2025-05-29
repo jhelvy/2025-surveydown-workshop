@@ -14,38 +14,11 @@ We also recommend working with an IDE that has good support for R, Quarto, and S
 
 [RStudio](https://posit.co/products/open-source/rstudio/) is great, and we also like [VSCode](https://code.visualstudio.com/) and [Positron](https://github.com/posit-dev/positron).
 
-### 2. Install the `surveydown` R package
+### 2. Install the `surveydown` and `sdApps` R packages
 
-You can install `surveydown` from CRAN in your R console:
-
-```{r}
-install.packages("surveydown")
-```
-
-or you can install the development version from [GitHub](https://github.com/surveydown-dev/surveydown):
+We recommend installing the development versions of `surveydown` and `sdApps` from GitHub:
 
 ```{r}
 # install.packages("pak")
-pak::pak("surveydown-dev/surveydown")
-```
-
-Load the package with:
-
-```{r}
-library(surveydown)
-```
-
-You can also check which version you have installed:
-
-```{r}
-surveydown::sd_version()
-```
-
-### 3. Install the `sdApps` R package
-
-You can install the development version (not on CRAN yet) of `sdApps` from [GitHub](https://github.com/surveydown-dev/sdApps):
-
-```{r}
-# install.packages("pak")
-pak::pak('surveydown-dev/sdApps)
+pak::pak(c("surveydown-dev/surveydown", "surveydown-dev/sdApps"))
 ```

@@ -120,6 +120,16 @@ class: center
 
 ---
 
+# Before we start...
+
+&lt;br&gt;
+
+## 1. Be sure to [install everything](https://jhelvy.github.io/2025-surveydown-workshop/install.html)
+
+## 2. Download the [examples](https://jhelvy.github.io/2025-surveydown-workshop/examples.zip)
+
+---
+
 
 
 class: inverse, middle
@@ -486,8 +496,10 @@ db &lt;- sd_db_connect()
 ui &lt;- sd_ui()
 
 server &lt;- function(input, output, session) {
+
   # Main server
   sd_server(db)
+  
 }
 
 shiny::shinyApp(
@@ -562,7 +574,7 @@ class: inverse, middle
 
 class: inverse
 
-<div class="countdown" id="timer_6250ff88" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_52292de9" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -581,8 +593,8 @@ surveydown::sd_create_survey()
 
 ``` r
 surveydown::sd_create_survey(
-  path     = "path/to/folder",
-  template = "question_types"
+  template = "question_types",
+  path     = "path/to/folder"
 )
 ```
 
@@ -792,20 +804,7 @@ Type | Description
 
 ---
 
-# Embedding images
-
-I recommend just writing html code, like this
-
-
-``` html
-&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
-```
-
-&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
-
----
-
-# Centered image
+# Embed images with html
 
 I recommend just writing html code, like this
 
@@ -814,6 +813,19 @@ I recommend just writing html code, like this
 &lt;center&gt;
 &lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
 &lt;/center&gt;
+```
+
+&lt;center&gt;
+&lt;img src="https://surveydown.org/images/logo.png" width=250&gt;
+&lt;/center&gt;
+
+---
+
+# Embed images with markdown
+
+
+``` html
+![](https://surveydown.org/images/logo.png){fig-align="center" width="250"}
 ```
 
 &lt;center&gt;
@@ -832,7 +844,7 @@ class: center, middle
 
 class: inverse
 
-<div class="countdown" id="timer_be7651c1" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown" id="timer_b5f86aa9" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

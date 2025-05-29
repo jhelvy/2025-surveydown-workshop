@@ -9,6 +9,7 @@ about:
   template: solana
   image-width: 12em
   id: hero-heading
+page-layout: full
 ---
 
 ### A workshop on building surveys with the [surveydown](https://surveydown.org/) platform
