@@ -33,6 +33,12 @@ output:
 
 ---
 
+class: center, middle
+
+# Conditional Question Display
+
+---
+
 class: center
 
 ## [Conditional question display](https://surveydown.org/docs/conditional-logic#conditional-question-display)
@@ -108,6 +114,120 @@ server <- function(input, output, session) {
 --
 
 2) Note the use of `input$penguins`
+
+---
+
+class: center, middle
+
+# Conditional Page Display
+
+---
+
+background-color: #fff
+class: center
+
+## Example: Randomly display one of two page versions
+
+<br>
+
+<center>
+<img src="images/show_if_page.png" width: 100%>
+</center>
+
+---
+
+First, define all pages in your `survey.qmd` file:
+
+.leftcol[
+
+````{markdown}
+::: {.sd_page id=page1}
+
+This is page 1
+
+```{r}
+sd_next()
+```
+
+:::
+
+::: {.sd_page id=page2a}
+
+This is page 2A
+
+```{r}
+sd_next()
+```
+
+:::
+
+````
+
+]
+
+.rightcol[
+
+````{markdown}
+::: {.sd_page id=page2b}
+
+This is page 2B
+
+```{r}
+sd_next()
+```
+
+:::
+
+::: {.sd_page id=page3}
+
+This is page 3
+
+```{r}
+sd_close()
+```
+
+:::
+````
+
+]
+
+---
+
+.leftcol[
+
+In `app.R`:
+
+```{r}
+#| eval: false
+
+server <- function(input, output, session) {
+
+  # Generate random condition
+  rand_val <- sample(c('A', 'B'), 1)
+
+  # Store the condition value
+  sd_store_value(rand_val)
+
+  # Use sd_show_if to show target pages
+  sd_show_if(
+    rand_val == 'A' ~ 'page2a',
+    rand_val == 'B' ~ 'page2b'
+  )
+
+  sd_server()
+
+}
+```
+
+]
+
+.rightcol[
+
+
+
+]
+
+
 
 ---
 

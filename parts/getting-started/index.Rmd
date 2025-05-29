@@ -85,6 +85,16 @@ class: center
 
 ---
 
+# Before we start...
+
+<br>
+
+## 1. Be sure to [install everything](https://jhelvy.github.io/2025-surveydown-workshop/install.html)
+
+## 2. Download the [examples](https://jhelvy.github.io/2025-surveydown-workshop/examples.zip)
+
+---
+
 ```{r child="topics/0.Rmd"}
 ```
 
@@ -423,8 +433,10 @@ db <- sd_db_connect()
 ui <- sd_ui()
 
 server <- function(input, output, session) {
+
   # Main server
   sd_server(db)
+  
 }
 
 shiny::shinyApp(
@@ -517,8 +529,8 @@ surveydown::sd_create_survey()
 #| eval: false
 
 surveydown::sd_create_survey(
-  path     = "path/to/folder",
-  template = "question_types"
+  template = "question_types",
+  path     = "path/to/folder"
 )
 ```
 
@@ -704,19 +716,7 @@ Type | Description
 
 ---
 
-# Embedding images
-
-I recommend just writing html code, like this
-
-```{html, eval=FALSE}
-<img src="https://surveydown.org/images/logo.png" width=250>
-```
-
-<img src="https://surveydown.org/images/logo.png" width=250>
-
----
-
-# Centered image
+# Embed images with html
 
 I recommend just writing html code, like this
 
@@ -724,6 +724,18 @@ I recommend just writing html code, like this
 <center>
 <img src="https://surveydown.org/images/logo.png" width=250>
 </center>
+```
+
+<center>
+<img src="https://surveydown.org/images/logo.png" width=250>
+</center>
+
+---
+
+# Embed images with markdown
+
+```{html, eval=FALSE}
+![](https://surveydown.org/images/logo.png){fig-align="center" width="250"}
 ```
 
 <center>

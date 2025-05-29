@@ -16,9 +16,9 @@
   {
     "objectID": "install.html",
     "href": "install.html",
-    "title": "",
+    "title": "surveydown workshop",
     "section": "",
-    "text": "1. Install R & Quarto\nYou need both:\n\nInstall \nInstall Quarto\n\nWe also recommend working with an IDE that has good support for R, Quarto, and Shiny.\nRStudio is great, and we also like VSCode and Positron.\n\n\n2. Install the surveydown R package\nYou can install surveydown from CRAN in your R console:\n\ninstall.packages(\"surveydown\")\n\nor you can install the development version from GitHub:\n\n# install.packages(\"pak\")\npak::pak(\"surveydown-dev/surveydown\")\n\nLoad the package with:\n\nlibrary(surveydown)\n\nYou can also check which version you have installed:\n\nsurveydown::sd_version()\n\n\n\n3. Install the sdApps R package\nYou can install the development version (not on CRAN yet) of sdApps from GitHub:\n\n# install.packages(\"pak\")\npak::pak('surveydown-dev/sdApps)"
+    "text": "1. Install R & Quarto\nYou need both:\n\nInstall \nInstall Quarto\n\nWe also recommend working with an IDE that has good support for R, Quarto, and Shiny.\nRStudio is great, and we also like VSCode and Positron.\n\n\n2. Install the surveydown and sdApps R packages\nWe recommend installing the development versions of surveydown and sdApps from GitHub:\n\n# install.packages(\"pak\")\npak::pak(c(\"surveydown-dev/surveydown\", \"surveydown-dev/sdApps\"))"
   },
   {
     "objectID": "LICENSE.html",
@@ -30,7 +30,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "",
+    "title": "surveydown workshop",
     "section": "",
     "text": "A workshop on building surveys with the surveydown platform\n\n\n\n\n\nLearn the basic structure of a surveydown survey and create your first survey\n\n\nPART 1: Getting Started\n\n\n\n\n\n\n\nTake control over page navigation and content display based on question responses\n\n\nPART 2: Conditional Control\n\n\n\n\n\n\n\nSetup up your database to store response data and dynamically use the data in your survey\n\n\nPART 3: Data Handling\n\n\n\n\n\n\n\nLeverage shiny’s powerful reactivity framework to make your surveys more dynamic\n\n\nPART 4: Reactivity"
   },
