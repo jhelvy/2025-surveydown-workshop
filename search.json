@@ -18,7 +18,7 @@
     "href": "install.html",
     "title": "",
     "section": "",
-    "text": "1. Install R & Quarto\nYou need both:\n\nInstall \nInstall Quarto\n\nWe also recommend working with an IDE that has good support for R, Quarto, and Shiny.\nRStudio is great, and we also like VSCode and Positron.\n\n\n2. Install the surveydown and sdApps R packages\nWe recommend installing the development versions of surveydown and sdApps from GitHub:\n\n# install.packages(\"pak\")\npak::pak(c(\"surveydown-dev/surveydown\", \"surveydown-dev/sdApps\"))"
+    "text": "1. Install R & Quarto\nYou need both:\n\nInstall \nInstall Quarto\n\nWe also recommend working with an IDE that has good support for R, Quarto, and Shiny.\nRStudio is great, and we also like VSCode and Positron.\n\n\n2. Install the surveydown and sdApps R packages\nWe recommend installing the development versions of surveydown and sdApps from GitHub:\n\n# install.packages(\"pak\")\npak::pak(c(\"surveydown-dev/surveydown\", \"surveydown-dev/sdstudio\"))"
   },
   {
     "objectID": "LICENSE.html",
