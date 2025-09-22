@@ -746,9 +746,9 @@ I recommend just writing html code, like this
 
 class: center, middle
 
-# Try out the surveydown [studio app](https://github.com/surveydown-dev/sdApps)
+# Try out the surveydown [studio app](https://github.com/surveydown-dev/sdstudio)
 
-## `sdApps::sd_studio()`
+## `sdstudio::launch()`
 
 ---
 

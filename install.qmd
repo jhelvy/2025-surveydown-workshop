@@ -20,5 +20,5 @@ We recommend installing the development versions of `surveydown` and `sdApps` fr
 
 ```{r}
 # install.packages("pak")
-pak::pak(c("surveydown-dev/surveydown", "surveydown-dev/sdApps"))
+pak::pak(c("surveydown-dev/surveydown", "surveydown-dev/sdstudio"))
 ```

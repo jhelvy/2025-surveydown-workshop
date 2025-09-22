@@ -279,7 +279,7 @@ In `app.R`:
 
 server <- function(input, output, session) {
 
-  sd_skip_forward( #<<
+  sd_skip_if( #<<
     input$vehicle_ownership == "no" ~ "screenout" #<<
   ) #<<
 

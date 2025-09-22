@@ -184,10 +184,10 @@ The `sd_db_connect()` function uses the `.env` file to make the database connect
 
 class: center
 
-## Use `sdApps::sd_dashboard()` to locally view data
+## Use `sdstudio::launch()` to locally view data
 
 <center>
-<img src="images/dashboard_1.png" width=80%>
+<img src="images/sdstudio-data.gif" width=70%>
 </center>
 
 ---
@@ -208,7 +208,7 @@ countdown(
 - Create a Supabase account and database. 
 - Run `surveydown::sd_db_config()` in your console to store your Supabase credentials. 
 - Run your survey locally, answer questions to generate data.
-- View your response data with `sdApps::sd_dashboard()`
+- View your response data with `sdstudio::launch()`
 
 ---
 
